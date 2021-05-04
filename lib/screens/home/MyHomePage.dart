@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../CustomText.dart';
+
 
 void main() {
   runApp( MyHomePage());
@@ -17,6 +19,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: CustomText(
+          text: "Sneex",
+          size: 24,
+          weight: FontWeight.bold,
+           )
+          )
+        );
+
     // return Scaffold(
     //     body: Center(
     //     child: Column(
