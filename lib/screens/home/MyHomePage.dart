@@ -90,7 +90,7 @@ data() {
     //
     // color: Colors.red,
     child: GridView.count(
-        crossAxisCount: 4,
+        crossAxisCount: 2,
         childAspectRatio: 1.0,
         padding: const EdgeInsets.all(4.0),
         mainAxisSpacing: 4.0,
