@@ -20,16 +20,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        title: CustomText(
-          text: "Sneex",
-          size: 24,
-          weight: FontWeight.bold,
-           )
+         body: Center(
+           child: Column(
+               children : [
+                 data()
+               ]
           )
-        );
+       )
+    );
 
     // return Scaffold(
     //     body: Center(
@@ -86,9 +84,11 @@ data() {
   //       .toList(),
   // );
 
-  return Container(
-
-    color: Colors.white30,
+  return Expanded(
+    // width: 50,
+    // height: 50,
+    //
+    // color: Colors.red,
     child: GridView.count(
         crossAxisCount: 4,
         childAspectRatio: 1.0,
@@ -96,20 +96,29 @@ data() {
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
         children: <String>[
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
-          'http://www.for-example.org/img/main/forexamplelogo.png',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+          'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
         ].map((String url) {
           return GridTile(
-              child: Image.network(url, fit: BoxFit.cover));
+              child: Image.network(url, width: 50, height: 50,));
         }).toList()),
   );
 
