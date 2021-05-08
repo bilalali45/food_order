@@ -43,7 +43,7 @@ dev_dependencies:
   logger: ^1.0.0
   modal_bottom_sheet: ^2.0.0
   uuid: ^3.0.4
-
+  bmnav: ^0.3.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
