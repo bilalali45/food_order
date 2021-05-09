@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
             constraints: BoxConstraints.expand(),
                decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(image1),
+                    image: AssetImage(background),
                     //image: NetworkImage("https://flutter-examples.com/wp-content/uploads/2020/02/dice.jpg"),
                     fit: BoxFit.cover)
 
@@ -34,7 +34,7 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(splash_logo, width: 120,),
+                    Image.asset(splash_logo, width: 200,height: 200,),
                     SizedBox(height: 10,),
                     Loading()
                   ],
