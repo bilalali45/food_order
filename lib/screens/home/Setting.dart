@@ -10,12 +10,127 @@ class Setting extends StatefulWidget {
 class SettingState extends State<Setting> {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: Container(
-        color: Colors.green,
-        padding: EdgeInsets.all(50.0),
-        child: Text('Setting', style: TextStyle(color: Colors.white, fontSize: 24.0)),
-      ),
+    return Scaffold(
+        body: Container(
+             child : Column(
+
+                 children: [
+                   Container(
+                     child: Container(
+                         color: Colors.blue,
+                         height: 200,
+                         width: double.infinity,
+                         padding: EdgeInsets.all(50.0),
+
+                       )
+
+                           ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Container(
+                         width: MediaQuery.of(context).size.width / 1.2,
+                         margin: EdgeInsets.only(top: 30),
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(25),
+                           color: Colors.grey.withOpacity(.3),
+                         ),
+                         child: Padding(
+                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                           child: TextField(
+                             decoration: InputDecoration(
+                                 icon: Icon(Icons.email_outlined),
+                                 fillColor: Colors.white,
+                                 border: InputBorder.none,
+                                 hintText: "Email"),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Container(
+                         width: MediaQuery.of(context).size.width / 1.2,
+                         margin: EdgeInsets.only(top: 30),
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(25),
+                           color: Colors.grey.withOpacity(.3),
+                         ),
+                         child: Padding(
+                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                           child: TextField(
+                             decoration: InputDecoration(
+                                 icon: Icon(Icons.person_rounded),
+                                 fillColor: Colors.white,
+                                 border: InputBorder.none,
+                                 hintText: "Name"),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Container(
+                         width: MediaQuery.of(context).size.width / 1.2,
+                         margin: EdgeInsets.only(top: 30),
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(25),
+                           color: Colors.grey.withOpacity(.3),
+                         ),
+                         child: Padding(
+                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                           child: TextField(
+                             decoration: InputDecoration(
+                                 icon: Icon(Icons.phone),
+                                 fillColor: Colors.white,
+                                 border: InputBorder.none,
+                                 hintText: "Name"),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Container(
+                         width: MediaQuery.of(context).size.width / 1.2,
+                         margin: EdgeInsets.only(top: 30),
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(25),
+                           color: Colors.grey.withOpacity(.3),
+                         ),
+                         child: Padding(
+                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                           child: TextField(
+                             decoration: InputDecoration(
+                                 icon: Icon(Icons.person_rounded),
+                                 fillColor: Colors.white,
+                                 border: InputBorder.none,
+                                 hintText: "Name"),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+
+                 ],
+
+
+
+
+
+
+          )
+
+
+            //  body: Center(child: Column(children: [data(context)]))
+        )
+
     );
   }
 }

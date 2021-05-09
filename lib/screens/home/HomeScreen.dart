@@ -4,6 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_order/screens/home/Productdetail.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen();
@@ -67,6 +68,8 @@ data(BuildContext context) {
           return GestureDetector(
               onTap: () {
                 showInSnackBar("test", context);
+                //builder: (context) => Productdetail();
+                _navigateToNextScreen(context);
               },
               child:GridTile(
                   child: new Column(children: <Widget>[
@@ -107,6 +110,11 @@ data(BuildContext context) {
         }).toList()),
   );
 }
+
+void _navigateToNextScreen(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Productdetail()));
+}
+
 
 void showInSnackBar(String value, BuildContext context) {
   final snackBar = SnackBar(
