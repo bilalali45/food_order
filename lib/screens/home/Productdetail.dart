@@ -30,13 +30,13 @@ class ProductdetailState extends State<Productdetail>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 2);
+    _tabController = new TabController(vsync: this, length: 5);
   }
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text('Complicated image slider demo')),
+      appBar: AppBar(title: Text('Product Detail')),
       body: Container(
 
           child: Column(
@@ -48,79 +48,130 @@ class ProductdetailState extends State<Productdetail>
                     enlargeCenterPage: true),
                 items: imageSliders()
             ),
-               TabBar(
-                controller: _tabController,
-                isScrollable: true,
-                unselectedLabelColor: Colors.transparent,
-                labelColor:  Colors.transparent,
-                indicatorSize: TabBarIndicatorSize.label,
-                // indicator: BubbleTabIndicator(
-                //   indicatorColor: AppColors.BUTTON_COLOR,
-                //   tabBarIndicatorSize: TabBarIndicatorSize.label,
-                //   indicatorRadius: 30.0,
-                //   padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 11.0,bottom: 9.0),
-                // ),
-                tabs: [
-                  Tab(
-                    child: Padding(
-                    padding: EdgeInsets.only(left: 7.0,right: 7.0),
-                        child: Column(
-                          children: [
-                            Icon(Icons.directions_car,color: Colors.black,),
-                            Text("two",style: TextStyle(color:Colors.black,fontSize: 12),textScaleFactor: 1.1),
-                          ],
-                        )
-                    ),
+              Container(
+                margin: const EdgeInsets.only(top: 15.0),
+                height: 60,
+                child: TabBar(
+                  controller: _tabController,
+                  isScrollable: true,
+                  unselectedLabelColor: Colors.grey,
+                  indicatorSize: TabBarIndicatorSize.label,
+
+                   indicatorColor: Colors.blue,
+                   labelColor: Colors.black,
+                  // indicator: BubbleTabIndicator(
+                  //   indicatorColor: AppColors.BUTTON_COLOR,
+                  //   tabBarIndicatorSize: TabBarIndicatorSize.label,
+                  //   indicatorRadius: 30.0,
+                  //   padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 11.0,bottom: 9.0),
+                  // ),
+                  tabs: [
+                    Tab(
+                      child: Padding(
+                      padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                          child: Column(
+                            children: [
+                               Container(
+
+                                 padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                                 child: Image(
+                                  image: AssetImage(infoicon),
+                                  fit: BoxFit.cover,width: 10,height: 30,),
+
+                              ),
+                              Container(
+                                  margin: const EdgeInsets.only(top: 5.0),
+                                  child: Text("FACILITIES",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1,)),
+                            ],
+                          )
+                      ),
 
 
 
-                    ),
+                      ),
 
-                  Tab(
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 7.0,right: 7.0),
-                        child: Column(
-                          children: [
-                            Icon(Icons.directions_car,color: Colors.black,),
-                            Text("two",style: TextStyle(color:Colors.black,fontSize: 12),textScaleFactor: 1.1),
-                          ],
-                        )
+                    Tab(
+                      child: Padding(
+                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                          child: Column(
+                            children: [
+
+                              Container(
+                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                                child: Image(
+                                  image: AssetImage(facilities),
+                                  fit: BoxFit.cover,width: 40,height: 30),
+
+                                 ),
+                                 Container(
+                                     margin: const EdgeInsets.only(top: 5.0),
+                                     child: Text("OUR FACILITIES",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
+                            ],
+                          )
+                      ),
                     ),
-                  ),
-                  Tab(
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 7.0,right: 7.0),
-                        child: Column(
-                          children: [
-                            Icon(Icons.directions_car,color: Colors.black,),
-                            Text("two",style: TextStyle(color:Colors.black,fontSize: 12),textScaleFactor: 1.1),
-                          ],
-                        )
+                    Tab(
+                      child: Padding(
+                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                          child: Column(
+                            children: [
+
+                              Container(
+                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                                child: Image(
+                                  image: AssetImage(gallery_img),
+                                  fit: BoxFit.cover,width: 30,height: 30,),
+
+                              ),
+                              Container(
+                                  margin: const EdgeInsets.only(top: 5.0),
+                                  child: Text("OUR GALLERY",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
+                            ],
+                          )
+                      ),
                     ),
-                  ),
-                  Tab(
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 7.0,right: 7.0),
-                        child: Column(
-                          children: [
-                            Icon(Icons.directions_car,color: Colors.black,),
-                            Text("two",style: TextStyle(color:Colors.black,fontSize: 12),textScaleFactor: 1.1),
-                          ],
-                        )
+                    Tab(
+                      child: Padding(
+                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                          child: Column(
+                            children: [
+
+                              Container(
+                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                                child: Image(
+                                  image: AssetImage(dateavailable_img),
+                                  fit: BoxFit.cover,width: 30,height: 30,),
+
+                              ),
+                              Container(
+                                  margin: const EdgeInsets.only(top: 5.0),
+                                  child: Text("DATE AVAILABILITY",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
+                            ],
+                          )
+                      ),
                     ),
-                  ),
-                  Tab(
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 7.0,right: 7.0),
-                        child: Column(
-                          children: [
-                            Icon(Icons.directions_car,color: Colors.black,),
-                            Text("two",style: TextStyle(color:Colors.black,fontSize: 12),textScaleFactor: 1.1),
-                          ],
-                        )
+                    Tab(
+                      child: Padding(
+                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                          child: Column(
+                            children: [
+
+                            Container(
+                              padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                                child: Image(
+                                       image: AssetImage(location_icon),
+                                       fit: BoxFit.cover,width: 30,height: 30,),
+
+                              ),
+                              Container(
+                                  margin: const EdgeInsets.only(top: 5.0),
+                                  child: Text("OUR LOCATION",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
+                            ],
+                          )
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
           ],)
       ),
