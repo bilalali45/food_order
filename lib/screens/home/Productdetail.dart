@@ -1,16 +1,14 @@
-import 'dart:html';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order/constants/assests_image.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart' show CalendarCarousel, EventList;
 import 'package:flutter_calendar_carousel/classes/event.dart';
-import 'package:flutter_calendar_carousel/classes/event_list.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 class Productdetail extends StatefulWidget {
   Productdetail();
-
+   CalendarCarousel _calendarCarousel;
   @override
   ProductdetailState createState() => ProductdetailState();
 }
@@ -39,6 +37,8 @@ class ProductdetailState extends State<Productdetail>
   void initState() {
 
 
+
+
     super.initState();
 
     // _tabController = new TabController(vsync: this, length: 5);
@@ -49,9 +49,10 @@ class ProductdetailState extends State<Productdetail>
 
     final List<String> entries = <String>['A', 'B', 'C'];
 
+
     DateTime _currentDate = DateTime(2019, 2, 3);
     DateTime _currentDate2 = DateTime(2019, 2, 3);
-    //String _currentMonth = DateFormat.yMMM().format(DateTime(2019, 2, 3));
+    String _currentMonth = DateFormat.yMMM().format(DateTime(2019, 2, 3));
     DateTime _targetDateTime = DateTime(2019, 2, 3);
 
     return Scaffold(
@@ -341,53 +342,51 @@ class ProductdetailState extends State<Productdetail>
                       ),
                     ),
                     Container(
-                      color: Colors.pink,
+                      height: 500,
                       child: Center(
+                        child:CalendarCarousel<Event>(
+                      onDayPressed: (date, events) {
+                    this.setState(() => _currentDate = date);
+                    events.forEach((event) => print(event.title));
+                    },
+                      weekendTextStyle: TextStyle(
+                        color: Colors.red,
+                      ),
+                      thisMonthDayBorderColor: Colors.grey,
+//          weekDays: null, /// for pass null when you do not want to render weekDays
+                      headerText: 'Custom Header',
+                      weekFormat: true,
+                     // markedDatesMap: _markedDateMap,
 
-                        child: Container(
-                           margin: EdgeInsets.symmetric(horizontal: 16.0),
-                           child: CalendarCarousel(
-                            onDayPressed: (DateTime date, List<Event> events) {
-                                this.setState(() => _currentDate = date);
-                            },
-                            weekendTextStyle: TextStyle(
-                              color: Colors.red,
-                            ),
-                            thisMonthDayBorderColor: Colors.grey,
-//      weekDays: null, /// for pass null when you do not want to render weekDays
-//      headerText: Container( /// Example for rendering custom header
-//        child: Text('Custom Header'),
-//      ),
-                            customDayBuilder: (   /// you can provide your own build function to make custom day containers
-                                bool isSelectable,
-                                int index,
-                                bool isSelectedDay,
-                                bool isToday,
-                                bool isPrevMonthDay,
-                                TextStyle textStyle,
-                                bool isNextMonthDay,
-                                bool isThisMonthDay,
-                                DateTime day,
-                                ) {
-                              /// If you return null, [CalendarCarousel] will build container for current [day] with default function.
-                              /// This way you can build custom containers for specific days only, leaving rest as default.
+                      selectedDateTime: _currentDate2,
+                      showIconBehindDayText: true,
+//          daysHaveCircularBorder: false, /// null for not rendering any border, true for circular border, false for rectangular border
+                      customGridViewPhysics: NeverScrollableScrollPhysics(),
+                      markedDateShowIcon: true,
+                      markedDateIconMaxShown: 2,
+                      selectedDayTextStyle: TextStyle(
+                        color: Colors.yellow,
+                      ),
+                      todayTextStyle: TextStyle(
+                        color: Colors.blue,
+                      ),
+                      markedDateIconBuilder: (event) {
+                        return event.icon ?? Icon(Icons.help_outline);
+                      },
+                      minSelectedDate: _currentDate.subtract(Duration(days: 360)),
+                      maxSelectedDate: _currentDate.add(Duration(days: 360)),
+                      todayButtonColor: Colors.transparent,
+                      todayBorderColor: Colors.green,
+                      markedDateMoreShowTotal:
+                      true, // null for not showing hidden events indicator
+//          markedDateIconMargin: 9,
+//          markedDateIconOffset: 3,
+                    )
 
-                              // Example: every 15th of month, we have a flight, we can place an icon in the container like that:
-                              if (day.day == 15) {
-                                return Center(
-                                  child: Icon(Icons.local_airport),
-                                );
-                              } else {
-                                return null;
-                              }
-                            },
-                            weekFormat: false,
-                            //markedDatesMap: _markedDateMap,
-                            height: 420.0,
-                           // selectedDateTime: _currentDate,
-                            daysHaveCircularBorder: false, /// null for not rendering any border, true for circular border, false for rectangular border
-                          ),
-                        ),
+
+                /// Example Calendar Carousel without header and custom prev & next button
+
+
 
                       ),
                     ),
