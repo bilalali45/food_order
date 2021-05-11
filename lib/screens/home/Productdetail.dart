@@ -1,7 +1,12 @@
+import 'dart:html';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order/constants/assests_image.dart';
+import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart' show CalendarCarousel, EventList;
+import 'package:flutter_calendar_carousel/classes/event.dart';
+import 'package:flutter_calendar_carousel/classes/event_list.dart';
+import 'package:intl/intl.dart' show DateFormat;
 
 class Productdetail extends StatefulWidget {
   Productdetail();
@@ -10,32 +15,49 @@ class Productdetail extends StatefulWidget {
   ProductdetailState createState() => ProductdetailState();
 }
 
+
+
+
 class ProductdetailState extends State<Productdetail>
+
     with SingleTickerProviderStateMixin {
-  CarouselController buttonCarouselController = CarouselController();
+     CarouselController buttonCarouselController = CarouselController();
 
-  TabController _tabController;
 
-  List<String> imgList = [
-    'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-    'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-    'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-    'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
-    'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-    'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
-  ];
+   TabController _tabController;
+
+    List<String> imgList = [
+      'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
+      'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
+      'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
+      'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+       ];
 
   @override
   void initState() {
+
+
     super.initState();
+
     // _tabController = new TabController(vsync: this, length: 5);
   }
 
   @override
   Widget build(BuildContext context) {
+
+    final List<String> entries = <String>['A', 'B', 'C'];
+
+    DateTime _currentDate = DateTime(2019, 2, 3);
+    DateTime _currentDate2 = DateTime(2019, 2, 3);
+    //String _currentMonth = DateFormat.yMMM().format(DateTime(2019, 2, 3));
+    DateTime _targetDateTime = DateTime(2019, 2, 3);
+
     return Scaffold(
       appBar: AppBar(title: Text('Product Detail')),
       body: DefaultTabController(
+
           length: 5,
           child: Column(
             children: <Widget>[
@@ -53,10 +75,13 @@ class ProductdetailState extends State<Productdetail>
               ),
               SizedBox(
                 height: 70,
+
                 child: Container(
-                    margin: const EdgeInsets.only(top: 15.0),
-                    height: 70,
+
                     child: Container(
+
+                      margin: const EdgeInsets.only(top: 15.0),
+                      height: 70,
                       child: TabBar(
                         //controller: _tabController,
                         isScrollable: false,
@@ -203,8 +228,18 @@ class ProductdetailState extends State<Productdetail>
                           ),
                         ],
                       ),
+
                     )),
               ),
+             SizedBox(
+               height: 3,
+                 child: Container(
+                   height: 3,
+                   margin: const EdgeInsets.all(10.0),
+                  color: Colors.grey,
+               )
+             ),
+
               Expanded(
                 child: TabBarView(
                   children: [
@@ -217,27 +252,143 @@ class ProductdetailState extends State<Productdetail>
                       ),
                     ),
                     Container(
-                      color: Colors.pink,
+                       color: Colors.white,
+                       child: Center(
+                          child: ListView.builder(
+                              padding: const EdgeInsets.all(8),
+                              itemCount: entries.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Container(
+
+                                  height: 100,
+                                  //color: Colors.amber[colorCodes[index]],
+                                  child: Center(
+                                     /// child: Text('Entry ${entries[index]}')
+
+                                      child: Container(
+
+                                        margin: EdgeInsets.all(10),
+                                        padding: EdgeInsets.all(10),
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            border: Border.all(
+                                                color: Colors.white, // Set border color
+                                                width: 3.0),   // Set border width
+                                                borderRadius: BorderRadius.all(
+                                                 Radius.circular(10.0)), // Set rounded corner radius
+                                                 boxShadow: [BoxShadow(blurRadius: 10,color: Colors.black,offset: Offset(1,3))] // Make rounded corner of border
+                                        ),
+                                        child: Text('Entry ${entries[index]}'),
+                                      )
+
+                                  ),
+                              );
+                            }
+
+                        )
+
+                      ),
+                    ),
+                    Container(
                       child: Center(
-                        child: Text(
-                          'Car',
-                        ),
+                        child: GridView.count(
+                            crossAxisCount: 4,
+                            childAspectRatio: 1.0,
+                            padding: const EdgeInsets.all(10.0),
+                            mainAxisSpacing: 10.0,
+                            crossAxisSpacing: 10.0,
+                            children: <String>[
+                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
+                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
+                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
+                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
+                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
+                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
+                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
+                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
+                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
+                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
+                              'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
+                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
+                              'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+                            ].map((String url) {
+                              return GestureDetector(
+                                  child:GridTile(
+                                      child: new Column(children: <Widget>[
+                                        new Padding(
+                                          padding: new EdgeInsets.all(3.0),
+                                          child: Image.network(url, height: 50, fit: BoxFit.cover),
+                                        ),
+                                        new Padding(
+                                            padding: new EdgeInsets.all(0.0),
+                                            child: Container(
+                                                child:  new Column(children: <Widget>[
+                                                  new Padding(
+                                                    padding: new EdgeInsets.all(2.0),
+                                                  ),
+                                          ]))),
+                                      ])));
+                            }).toList()),
+
                       ),
                     ),
                     Container(
                       color: Colors.pink,
                       child: Center(
-                        child: Text(
-                          'Car',
+
+                        child: Container(
+                           margin: EdgeInsets.symmetric(horizontal: 16.0),
+                           child: CalendarCarousel(
+                            onDayPressed: (DateTime date, List<Event> events) {
+                                this.setState(() => _currentDate = date);
+                            },
+                            weekendTextStyle: TextStyle(
+                              color: Colors.red,
+                            ),
+                            thisMonthDayBorderColor: Colors.grey,
+//      weekDays: null, /// for pass null when you do not want to render weekDays
+//      headerText: Container( /// Example for rendering custom header
+//        child: Text('Custom Header'),
+//      ),
+                            customDayBuilder: (   /// you can provide your own build function to make custom day containers
+                                bool isSelectable,
+                                int index,
+                                bool isSelectedDay,
+                                bool isToday,
+                                bool isPrevMonthDay,
+                                TextStyle textStyle,
+                                bool isNextMonthDay,
+                                bool isThisMonthDay,
+                                DateTime day,
+                                ) {
+                              /// If you return null, [CalendarCarousel] will build container for current [day] with default function.
+                              /// This way you can build custom containers for specific days only, leaving rest as default.
+
+                              // Example: every 15th of month, we have a flight, we can place an icon in the container like that:
+                              if (day.day == 15) {
+                                return Center(
+                                  child: Icon(Icons.local_airport),
+                                );
+                              } else {
+                                return null;
+                              }
+                            },
+                            weekFormat: false,
+                            //markedDatesMap: _markedDateMap,
+                            height: 420.0,
+                           // selectedDateTime: _currentDate,
+                            daysHaveCircularBorder: false, /// null for not rendering any border, true for circular border, false for rectangular border
+                          ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      color: Colors.pink,
-                      child: Center(
-                        child: Text(
-                          'Car',
-                        ),
+
                       ),
                     ),
                     Container(
@@ -300,7 +451,10 @@ class ProductdetailState extends State<Productdetail>
               ),
             ))
         .toList();
-  }
+    }
+
+
+
 }
 
 // Widget image_carousel = new Container(
