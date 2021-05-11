@@ -4,17 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:food_order/constants/assests_image.dart';
 
 class Productdetail extends StatefulWidget {
-
   Productdetail();
-
 
   @override
   ProductdetailState createState() => ProductdetailState();
 }
 
 class ProductdetailState extends State<Productdetail>
-    with SingleTickerProviderStateMixin{
-
+    with SingleTickerProviderStateMixin {
   CarouselController buttonCarouselController = CarouselController();
 
   TabController _tabController;
@@ -27,19 +24,20 @@ class ProductdetailState extends State<Productdetail>
     'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
     'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
   ];
+
   @override
   void initState() {
     super.initState();
-   // _tabController = new TabController(vsync: this, length: 5);
+    // _tabController = new TabController(vsync: this, length: 5);
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(title: Text('Product Detail')),
       body: DefaultTabController(
           length: 5,
-           child: Column(
+          child: Column(
             children: <Widget>[
               SizedBox(
                 height: 240,
@@ -47,169 +45,185 @@ class ProductdetailState extends State<Productdetail>
                   child: CarouselSlider(
                       options: CarouselOptions(
                           autoPlay: true,
-                          aspectRatio: 2.0,
+                          //aspectRatio: 2.0,
+                          viewportFraction: 01,
                           enlargeCenterPage: true),
-                      items: imageSliders()
-                  ),
+                           items: imageSliders()),
                 ),
               ),
-
-                         SizedBox(
-                          height: 70,
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 15.0),
-                          height: 70,
-
+              SizedBox(
+                height: 70,
                 child: Container(
-                  child: TabBar(
-                       //controller: _tabController,
-                       isScrollable: true,
-                       unselectedLabelColor: Colors.grey,
-                       indicatorSize: TabBarIndicatorSize.label,
-                       indicatorColor: Colors.blue,
-                       labelColor: Colors.black,
-                    // indicator: BubbleTabIndicator(
-                    //   indicatorColor: AppColors.BUTTON_COLOR,
-                    //   tabBarIndicatorSize: TabBarIndicatorSize.label,
-                    //   indicatorRadius: 30.0,
-                    //   padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 11.0,bottom: 9.0),
-                    // ),
-                  tabs: [
-                    Tab(
-                      child: Padding(
-                      padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                          child: Column(
-                            children: [
-                               Container(
-
-                                 padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                                 child: Image(
-                                  image: AssetImage(infoicon),
-                                  fit: BoxFit.cover,width: 10,height: 30,),
-
-                              ),
-                              Container(
-                                  margin: const EdgeInsets.only(top: 5.0),
-                                  child: Text("FACILITIES",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1,)),
-                            ],
-                          )
-                      ),
+                    margin: const EdgeInsets.only(top: 15.0),
+                    height: 70,
+                    child: Container(
+                      child: TabBar(
+                        //controller: _tabController,
+                        isScrollable: false,
+                        unselectedLabelColor: Colors.grey,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        indicatorColor: Colors.blue,
+                        labelColor: Colors.black,
 
 
 
-                      ),
-                    Tab(
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                          child: Column(
-                            children: [
+                        // indicator: BubbleTabIndicator(
+                        //   indicatorColor: AppColors.BUTTON_COLOR,
+                        //   tabBarIndicatorSize: TabBarIndicatorSize.label,
+                        //   indicatorRadius: 30.0,
+                        //   padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 11.0,bottom: 9.0),
+                        // ),
+                        tabs: [
+                          Tab(
 
-                              Container(
-                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                                child: Image(
-                                  image: AssetImage(facilities),
-                                  fit: BoxFit.cover,width: 40,height: 30),
-
-                                 ),
-                                 Container(
-                                     margin: const EdgeInsets.only(top: 5.0),
-                                     child: Text("OUR FACILITIES",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
-                            ],
-                          )
-                      ),
-                    ),
-                    Tab(
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                          child: Column(
-                            children: [
-
-                              Container(
-                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                                child: Image(
-                                  image: AssetImage(gallery_img),
-                                  fit: BoxFit.cover,width: 30,height: 30,),
-
-                              ),
-                              Container(
-                                  margin: const EdgeInsets.only(top: 5.0),
-                                  child: Text("OUR GALLERY",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
-                            ],
-                          )
-                      ),
-                    ),
-                    Tab(
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                          child: Column(
-                            children: [
-
-                              Container(
-                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                                child: Image(
-                                  image: AssetImage(dateavailable_img),
-                                  fit: BoxFit.cover,width: 30,height: 30,),
-
-                              ),
-                              Container(
-                                  margin: const EdgeInsets.only(top: 5.0),
-                                  child: Text("DATE AVAILABILITY",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
-                            ],
-                          )
-                      ),),
-                    Tab(
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                          child: Column(
-                            children: [
-
-                            Container(
-                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
-                                child: Image(
-                                       image: AssetImage(location_icon),
-                                       fit: BoxFit.cover,width: 30,height: 30,),
-
-                              ),
-                              Container(
-                                  margin: const EdgeInsets.only(top: 5.0),
-                                  child: Text("OUR LOCATION",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
-                            ],
-                          )
-                      ),
-                    ),
-                  ],
-
-                ),
-
-                )
-
-
-              ),
-
-
-         ),
-
-              Expanded(
-                  child: TabBarView(
-                  children: [
-                        Container(
-                        color: Colors.red,
-                        child: Center(
-                          child: Text(
-                            'Bike',
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 2.0, right: 2.0),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                          left: 2.0, right: 2.0),
+                                      child: Image(
+                                        image: AssetImage(infoicon),
+                                        fit: BoxFit.cover,
+                                        width: 10,
+                                        height: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                        margin: const EdgeInsets.only(top: 5.0),
+                                        child: Text(
+                                          "FACILITIES",
+                                          style: TextStyle(
+                                              color: Colors.black38,
+                                              fontSize: 6),
+                                          textScaleFactor: 1.1,
+                                        )),
+                                  ],
+                                )),
                           ),
+                          Tab(
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 2.0, right: 2.0),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                          left: 2.0, right: 2.0),
+                                      child: Image(
+                                          image: AssetImage(facilities),
+                                          fit: BoxFit.cover,
+                                          width: 40,
+                                          height: 30),
+                                    ),
+                                    Container(
+                                        margin: const EdgeInsets.only(top: 5.0),
+                                        child: Text("OUR FACILITIES",
+                                            style: TextStyle(
+                                                color: Colors.black38,
+                                                fontSize: 6),
+                                            textScaleFactor: 1.1)),
+                                  ],
+                                )),
+                          ),
+                          Tab(
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 2.0, right: 2.0),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                          left: 2.0, right: 2.0),
+                                      child: Image(
+                                        image: AssetImage(gallery_img),
+                                        fit: BoxFit.cover,
+                                        width: 30,
+                                        height: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                        margin: const EdgeInsets.only(top: 5.0),
+                                        child: Text("OUR GALLERY",
+                                            style: TextStyle(
+                                                color: Colors.black38,
+                                                fontSize: 6),
+                                            textScaleFactor: 1.1)),
+                                  ],
+                                )),
+                          ),
+                          Tab(
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 2.0, right: 2.0),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                          left: 2.0, right: 2.0),
+                                      child: Image(
+                                        image: AssetImage(dateavailable_img),
+                                        fit: BoxFit.cover,
+                                        width: 30,
+                                        height: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                        margin: const EdgeInsets.only(top: 5.0),
+                                        child: Text("AVAILABILITY",
+                                            style: TextStyle(
+                                                color: Colors.black38,
+                                                fontSize: 6),
+                                            textScaleFactor: 1.1)),
+                                  ],
+                                )),
+                          ),
+                          Tab(
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 2.0, right: 2.0),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                          left: 2.0, right: 2.0),
+                                      child: Image(
+                                        image: AssetImage(location_icon),
+                                        fit: BoxFit.cover,
+                                        width: 30,
+                                        height: 30,
+                                      ),
+                                    ),
+                                    Container(
+                                        margin: const EdgeInsets.only(top: 5.0),
+                                        child: Text("OUR LOCATION",
+                                            style: TextStyle(
+                                                color: Colors.black38,
+                                                fontSize: 6),
+                                            textScaleFactor: 1.1)),
+                                  ],
+                                )),
+                          ),
+                        ],
+                      ),
+                    )),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    Container(
+                      color: Colors.red,
+                      child: Center(
+                        child: Text(
+                          'Bike',
                         ),
                       ),
-
-
-                  Container(
-                    color: Colors.pink,
-                    child: Center(
-                      child: Text(
-                        'Car',
+                    ),
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'Car',
+                        ),
                       ),
                     ),
-                  ),
                     Container(
                       color: Colors.pink,
                       child: Center(
@@ -236,58 +250,56 @@ class ProductdetailState extends State<Productdetail>
                     ),
                   ],
                 ),
-
-
-                    )
-
-            ],)
-      ),
+              )
+            ],
+          )),
     );
   }
 
   imageSliders() {
-    return imgList.map((item) =>
-        Container(
-          child: Container(
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                child: Stack(
-                  children: <Widget>[
-                    //Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                     Image.network(item, fit: BoxFit.cover, width: double.infinity),
-                       Positioned(
-                         bottom: 0.0,
-                         left: 0.0,
-                         right: 0.0,
-                          child: Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(200, 0, 0, 0),
-                                Color.fromARGB(0, 0, 0, 0)
-                              ],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                            ),
-                          ),
-                            padding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                            child: Text(
-                            'No. ${imgList.indexOf(item)} image',
-                              style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                    ),
-                  ],
-                )
-            ),
-          ),
-        )).toList();
+    return imgList
+        .map((item) => Container(
+              child: Container(
+                margin: EdgeInsets.all(0.0),
+                child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    child: Stack(
+                      children: <Widget>[
+                        //Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                        Image.network(item,
+                            fit: BoxFit.cover, width: double.infinity),
+                        // Positioned(
+                        //   bottom: 0.0,
+                        //   left: 0.0,
+                        //   right: 0.0,
+                        //   child: Container(
+                        //     decoration: BoxDecoration(
+                        //       gradient: LinearGradient(
+                        //         colors: [
+                        //           Color.fromARGB(200, 0, 0, 0),
+                        //           Color.fromARGB(0, 0, 0, 0)
+                        //         ],
+                        //         begin: Alignment.bottomCenter,
+                        //         end: Alignment.topCenter,
+                        //       ),
+                        //     ),
+                        //     padding: EdgeInsets.symmetric(
+                        //         vertical: 10.0, horizontal: 20.0),
+                        //     child: Text(
+                        //       'No. ${imgList.indexOf(item)} image',
+                        //       style: TextStyle(
+                        //         color: Colors.white,
+                        //         fontSize: 20.0,
+                        //         fontWeight: FontWeight.bold,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                      ],
+                    )),
+              ),
+            ))
+        .toList();
   }
 }
 
