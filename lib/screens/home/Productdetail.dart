@@ -30,41 +30,50 @@ class ProductdetailState extends State<Productdetail>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 5);
+   // _tabController = new TabController(vsync: this, length: 5);
   }
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(title: Text('Product Detail')),
-      body: Container(
-
-          child: Column(
+      body: DefaultTabController(
+          length: 5,
+           child: Column(
             children: <Widget>[
-            CarouselSlider(
-                options: CarouselOptions(
-                    autoPlay: true,
-                    aspectRatio: 2.0,
-                    enlargeCenterPage: true),
-                items: imageSliders()
-            ),
-              Container(
-                margin: const EdgeInsets.only(top: 15.0),
-                height: 60,
-                child: TabBar(
-                  controller: _tabController,
-                  isScrollable: true,
-                  unselectedLabelColor: Colors.grey,
-                  indicatorSize: TabBarIndicatorSize.label,
+              SizedBox(
+                height: 240,
+                child: Center(
+                  child: CarouselSlider(
+                      options: CarouselOptions(
+                          autoPlay: true,
+                          aspectRatio: 2.0,
+                          enlargeCenterPage: true),
+                      items: imageSliders()
+                  ),
+                ),
+              ),
 
-                   indicatorColor: Colors.blue,
-                   labelColor: Colors.black,
-                  // indicator: BubbleTabIndicator(
-                  //   indicatorColor: AppColors.BUTTON_COLOR,
-                  //   tabBarIndicatorSize: TabBarIndicatorSize.label,
-                  //   indicatorRadius: 30.0,
-                  //   padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 11.0,bottom: 9.0),
-                  // ),
+                         SizedBox(
+                          height: 70,
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 15.0),
+                          height: 70,
+
+                child: Container(
+                  child: TabBar(
+                       //controller: _tabController,
+                       isScrollable: true,
+                       unselectedLabelColor: Colors.grey,
+                       indicatorSize: TabBarIndicatorSize.label,
+                       indicatorColor: Colors.blue,
+                       labelColor: Colors.black,
+                    // indicator: BubbleTabIndicator(
+                    //   indicatorColor: AppColors.BUTTON_COLOR,
+                    //   tabBarIndicatorSize: TabBarIndicatorSize.label,
+                    //   indicatorRadius: 30.0,
+                    //   padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 11.0,bottom: 9.0),
+                    // ),
                   tabs: [
                     Tab(
                       child: Padding(
@@ -89,7 +98,6 @@ class ProductdetailState extends State<Productdetail>
 
 
                       ),
-
                     Tab(
                       child: Padding(
                           padding: EdgeInsets.only(left: 2.0,right: 2.0),
@@ -148,8 +156,7 @@ class ProductdetailState extends State<Productdetail>
                                   child: Text("DATE AVAILABILITY",style: TextStyle(color:Colors.black38,fontSize: 8),textScaleFactor: 1.1)),
                             ],
                           )
-                      ),
-                    ),
+                      ),),
                     Tab(
                       child: Padding(
                           padding: EdgeInsets.only(left: 2.0,right: 2.0),
@@ -157,7 +164,7 @@ class ProductdetailState extends State<Productdetail>
                             children: [
 
                             Container(
-                              padding: EdgeInsets.only(left: 2.0,right: 2.0),
+                                padding: EdgeInsets.only(left: 2.0,right: 2.0),
                                 child: Image(
                                        image: AssetImage(location_icon),
                                        fit: BoxFit.cover,width: 30,height: 30,),
@@ -171,9 +178,69 @@ class ProductdetailState extends State<Productdetail>
                       ),
                     ),
                   ],
+
                 ),
+
+                )
+
+
               ),
-          ],)
+
+
+         ),
+
+              Expanded(
+                  child: TabBarView(
+                  children: [
+                        Container(
+                        color: Colors.red,
+                        child: Center(
+                          child: Text(
+                            'Bike',
+                          ),
+                        ),
+                      ),
+
+
+                  Container(
+                    color: Colors.pink,
+                    child: Center(
+                      child: Text(
+                        'Car',
+                      ),
+                    ),
+                  ),
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'Car',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'Car',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'Car',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+
+                    )
+
+            ],)
       ),
     );
   }
@@ -187,33 +254,34 @@ class ProductdetailState extends State<Productdetail>
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
                   children: <Widget>[
-                    Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
+                    //Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                     Image.network(item, fit: BoxFit.cover, width: double.infinity),
+                       Positioned(
+                         bottom: 0.0,
+                         left: 0.0,
+                         right: 0.0,
+                          child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(200, 0, 0, 0),
+                                Color.fromARGB(0, 0, 0, 0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 20.0),
+                            child: Text(
+                            'No. ${imgList.indexOf(item)} image',
+                              style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
-                        child: Text(
-                          'No. ${imgList.indexOf(item)} image',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
                     ),
                   ],
                 )

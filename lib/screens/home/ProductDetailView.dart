@@ -1,6 +1,5 @@
-
- import 'package:flutter/cupertino.dart';
- import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ProductDetailView extends StatefulWidget {
   ProductDetailView();
@@ -27,6 +26,4 @@ class ProductDetailViewState extends State<ProductDetailView> {
       ),
     );
   }
-
-
 }
