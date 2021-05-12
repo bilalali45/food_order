@@ -21,7 +21,7 @@ class ProductdetailState extends State<Productdetail>
     with SingleTickerProviderStateMixin {
      CarouselController buttonCarouselController = CarouselController();
 
-
+    int cur_index = 0;
    TabController _tabController;
 
     List<String> imgList = [
@@ -41,7 +41,13 @@ class ProductdetailState extends State<Productdetail>
 
     super.initState();
 
-    // _tabController = new TabController(vsync: this, length: 5);
+     _tabController = new TabController(vsync: this, length: 5);
+     _tabController.addListener(() {
+      setState(() {
+        cur_index = _tabController.index;
+      });
+
+       });
   }
 
   @override
@@ -57,10 +63,10 @@ class ProductdetailState extends State<Productdetail>
 
     return Scaffold(
       appBar: AppBar(title: Text('Product Detail')),
-      body: DefaultTabController(
-
-          length: 5,
+      body: Container(
+          //length: 5,
           child: Column(
+
             children: <Widget>[
               SizedBox(
                 height: 240,
@@ -84,12 +90,18 @@ class ProductdetailState extends State<Productdetail>
                       margin: const EdgeInsets.only(top: 15.0),
                       height: 70,
                       child: TabBar(
-                        //controller: _tabController,
+
+                        controller: _tabController,
                         isScrollable: false,
                         unselectedLabelColor: Colors.grey,
                         indicatorSize: TabBarIndicatorSize.label,
                         indicatorColor: Colors.blue,
                         labelColor: Colors.black,
+                        onTap: (index){
+                         setState(() {
+                           cur_index = index;
+                         });
+                        },
 
 
 
@@ -107,10 +119,11 @@ class ProductdetailState extends State<Productdetail>
                                 child: Column(
                                   children: [
                                     Container(
+
                                       padding: EdgeInsets.only(
                                           left: 2.0, right: 2.0),
                                       child: Image(
-                                        image: AssetImage(infoicon),
+                                        image: cur_index == 0 ? AssetImage(infoicon) :  AssetImage(gallery_img)  ,
                                         fit: BoxFit.cover,
                                         width: 10,
                                         height: 30,
@@ -203,6 +216,7 @@ class ProductdetailState extends State<Productdetail>
                                 )),
                           ),
                           Tab(
+
                             child: Padding(
                                 padding: EdgeInsets.only(left: 2.0, right: 2.0),
                                 child: Column(
@@ -243,6 +257,7 @@ class ProductdetailState extends State<Productdetail>
 
               Expanded(
                 child: TabBarView(
+                  controller: _tabController,
                   children: [
                     Container(
                       color: Colors.red,
@@ -292,6 +307,7 @@ class ProductdetailState extends State<Productdetail>
                       ),
                     ),
                     Container(
+                      margin: new EdgeInsets.all(20.0),
                       child: Center(
                         child: GridView.count(
                             crossAxisCount: 4,
@@ -341,8 +357,10 @@ class ProductdetailState extends State<Productdetail>
 
                       ),
                     ),
+
+
                     Container(
-                      height: 500,
+                      margin: new EdgeInsets.all(30.0),
                       child: Center(
                         child:CalendarCarousel<Event>(
                       onDayPressed: (date, events) {
@@ -351,20 +369,23 @@ class ProductdetailState extends State<Productdetail>
                     },
                       weekendTextStyle: TextStyle(
                         color: Colors.red,
+
                       ),
                       thisMonthDayBorderColor: Colors.grey,
+                          dayPadding: 1.0,
 //          weekDays: null, /// for pass null when you do not want to render weekDays
                       headerText: 'Custom Header',
-                      weekFormat: true,
+                      weekFormat: false,
                      // markedDatesMap: _markedDateMap,
 
                       selectedDateTime: _currentDate2,
                       showIconBehindDayText: true,
 //          daysHaveCircularBorder: false, /// null for not rendering any border, true for circular border, false for rectangular border
-                      customGridViewPhysics: NeverScrollableScrollPhysics(),
+                      customGridViewPhysics: BouncingScrollPhysics(),
+
                       markedDateShowIcon: true,
                       markedDateIconMaxShown: 2,
-                      selectedDayTextStyle: TextStyle(
+                          selectedDayTextStyle: TextStyle(
                         color: Colors.yellow,
                       ),
                       todayTextStyle: TextStyle(
