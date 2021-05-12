@@ -11,6 +11,7 @@ class ProductDetailViewState extends State<ProductDetailView> {
   @override
   Widget build(BuildContext ctx) {
     var title = "Image Slider Widget";
+    // https://stackoverflow.com/questions/52227846/how-can-i-add-shadow-to-the-widget-in-flutter
     return MaterialApp(
       title: title,
       home: Scaffold(

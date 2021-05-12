@@ -6,6 +6,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order/screens/home/Productdetail.dart';
 
+
+import 'dart:async';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen();
   @override
@@ -13,12 +17,29 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+
+  Completer<GoogleMapController> _controller = Completer();
+
+  static const LatLng _center = const LatLng(45.521563, -122.677433);
+
+  void _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
+  }
+
+
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
 
-        body: Center(child: Column(children: [data(context)]))
 
+      // body: GoogleMap(
+      //     onMapCreated: _onMapCreated,
+      //     initialCameraPosition: CameraPosition(
+      //       target: _center,
+      //       zoom: 11.0,
+      //     ),
+       body: Center(child: Column(children: [data(context)]))
+      // )
     );
 
       // child: Container(

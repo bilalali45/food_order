@@ -46,6 +46,8 @@ dev_dependencies:
   bmnav: ^0.3.4
   carousel_slider: ^3.0.0
   flutter_calendar_carousel: ^2.0.1
+  google_maps_flutter: ^2.0.3
+
 
 #  simple_slider: ^0.0.1
 

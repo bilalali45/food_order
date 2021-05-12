@@ -5,6 +5,9 @@ import 'package:food_order/constants/assests_image.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart' show CalendarCarousel, EventList;
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:intl/intl.dart' show DateFormat;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:async';
+
 
 class Productdetail extends StatefulWidget {
   Productdetail();
@@ -33,7 +36,16 @@ class ProductdetailState extends State<Productdetail>
       'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
        ];
 
-  @override
+     Completer<GoogleMapController> _controller = Completer();
+
+     static const LatLng _center = const LatLng(45.521563, -122.677433);
+
+     void _onMapCreated(GoogleMapController controller) {
+       _controller.complete(controller);
+     }
+
+
+     @override
   void initState() {
 
 
@@ -64,6 +76,9 @@ class ProductdetailState extends State<Productdetail>
     return Scaffold(
       appBar: AppBar(title: Text('Product Detail')),
       body: Container(
+
+
+
           //length: 5,
           child: Column(
 
@@ -87,9 +102,38 @@ class ProductdetailState extends State<Productdetail>
 
                     child: Container(
 
-                      margin: const EdgeInsets.only(top: 15.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 1.0), //(x,y)
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                      ),
+
+                     // margin: const EdgeInsets.only(top: 15.0),
                       height: 70,
+                      // margin: EdgeInsets.all(8),
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(8.0),
+                      //   color: Colors.white,
+                      //   boxShadow: [
+                      //     BoxShadow(
+                      //       color: Colors.black,
+                      //       blurRadius: 2.0,
+                      //       spreadRadius: 0.0,
+                      //       offset: Offset(2.0, 2.0), // shadow direction: bottom right
+                      //     )
+                      //   ],
+                      // ),
+
+
+
                       child: TabBar(
+
 
                         controller: _tabController,
                         isScrollable: false,
@@ -260,11 +304,25 @@ class ProductdetailState extends State<Productdetail>
                   controller: _tabController,
                   children: [
                     Container(
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'Bike',
+                      margin: EdgeInsets.only(left: 30, top: 30, right: 30, bottom: 50),
+                      height: double.infinity,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10)
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -412,18 +470,26 @@ class ProductdetailState extends State<Productdetail>
                       ),
                     ),
                     Container(
-                      color: Colors.pink,
                       child: Center(
-                        child: Text(
-                          'Car',
-                        ),
+                        child: GoogleMap(
+                          onMapCreated: _onMapCreated,
+                          initialCameraPosition: CameraPosition(
+                            target: _center,
+                            zoom: 11.0,
+                          ),
                       ),
                     ),
+                    )
                   ],
                 ),
               )
             ],
           )),
+
+
+
+
+
     );
   }
 
