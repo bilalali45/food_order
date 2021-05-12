@@ -47,6 +47,10 @@ dev_dependencies:
   carousel_slider: ^3.0.0
   flutter_calendar_carousel: ^2.0.1
   google_maps_flutter: ^2.0.3
+  smooth_page_indicator: ^0.2.3
+  dots_indicator: ^2.0.0
+
+
 
 
 #  simple_slider: ^0.0.1

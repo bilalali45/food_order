@@ -7,6 +7,9 @@ import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:intl/intl.dart' show DateFormat;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'package:dots_indicator/dots_indicator.dart';
 
 
 class Productdetail extends StatefulWidget {
@@ -25,8 +28,10 @@ class ProductdetailState extends State<Productdetail>
      CarouselController buttonCarouselController = CarouselController();
 
     int cur_index = 0;
-   TabController _tabController;
+     double _currentpage = 0;
 
+     TabController _tabController;
+      CarouselController _controllerpager;
     List<String> imgList = [
       'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
       'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
@@ -53,13 +58,24 @@ class ProductdetailState extends State<Productdetail>
 
     super.initState();
 
-     _tabController = new TabController(vsync: this, length: 5);
+    _controllerpager = CarouselController();
+
+    _tabController = new TabController(vsync: this, length: 5);
+
+
+
      _tabController.addListener(() {
       setState(() {
         cur_index = _tabController.index;
       });
 
+
        });
+
+
+
+
+
   }
 
   @override
@@ -87,14 +103,41 @@ class ProductdetailState extends State<Productdetail>
                 height: 240,
                 child: Center(
                   child: CarouselSlider(
+
+
+
                       options: CarouselOptions(
                           autoPlay: true,
                           //aspectRatio: 2.0,
                           viewportFraction: 01,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              _currentpage = index.toDouble();
+                            });
+                          },
                           enlargeCenterPage: true),
-                           items: imageSliders()),
+                           carouselController: _controllerpager,
+                           items: imageSliders()
+
+
+
+                  ),
+
+
+
+
                 ),
               ),
+
+              DotsIndicator(
+                dotsCount: 6,
+                position: _currentpage,
+                decorator: DotsDecorator(
+                  color: Colors.black87, // Inactive color
+                  activeColor: Colors.redAccent,
+                ),
+              ),
+
               SizedBox(
                 height: 70,
 
@@ -133,6 +176,7 @@ class ProductdetailState extends State<Productdetail>
 
 
                       child: TabBar(
+
 
 
                         controller: _tabController,
@@ -304,8 +348,8 @@ class ProductdetailState extends State<Productdetail>
                   controller: _tabController,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 30, top: 30, right: 30, bottom: 50),
-                      height: double.infinity,
+                      margin: EdgeInsets.only(left: 30, top: 30, right: 30, bottom: 70),
+                      height: 70,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -325,6 +369,8 @@ class ProductdetailState extends State<Productdetail>
                         ],
                       ),
                     ),
+
+
                     Container(
                        color: Colors.white,
                        child: Center(
