@@ -98,6 +98,8 @@ class ProductdetailState extends State<Productdetail>
           child: Column(
 
             children: <Widget>[
+
+              
               SizedBox(
                 height: 240,
                 child: Center(
@@ -114,10 +116,7 @@ class ProductdetailState extends State<Productdetail>
                           enlargeCenterPage: true),
                            carouselController: _controllerpager,
                            items: imageSliders()
-
-
-
-                  ),
+                        ),
 
 
 
@@ -470,7 +469,7 @@ class ProductdetailState extends State<Productdetail>
                                   )
                               ),
                               Padding(
-                                  padding: EdgeInsets.fromLTRB(5, 5, 0, 5),
+                                  padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
                                   child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Row(
