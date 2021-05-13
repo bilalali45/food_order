@@ -9,6 +9,8 @@ final String gallery_img = _getImagePath("galleryicon.png");
 final String infoicon = _getImagePath("info.png");
 
 
+// https://stackoverflow.com/questions/50186555/how-to-set-margin-for-a-button-in-flutter
+// https://stackoverflow.com/questions/52227846/how-can-i-add-shadow-to-the-widget-in-flutter
 
 String _getImagePath(String fileName){
   return imageAssetsRoot + fileName;

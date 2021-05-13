@@ -8,7 +8,6 @@ import 'package:intl/intl.dart' show DateFormat;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import 'package:dots_indicator/dots_indicator.dart';
 
 
@@ -103,9 +102,6 @@ class ProductdetailState extends State<Productdetail>
                 height: 240,
                 child: Center(
                   child: CarouselSlider(
-
-
-
                       options: CarouselOptions(
                           autoPlay: true,
                           //aspectRatio: 2.0,
@@ -366,8 +362,213 @@ class ProductdetailState extends State<Productdetail>
                             blurRadius: 7,
                             offset: Offset(0, 3), // changes position of shadow
                           ),
+
+
+
                         ],
+
+
                       ),
+
+
+
+
+                      child:Container(
+
+                        //length: 5,
+                        child: Column(
+                            children: <Widget>[
+
+                        Padding(
+                        padding: EdgeInsets.fromLTRB(0, 20, 20, 5),
+
+                         child:Text('About',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                                color: Colors.black87,
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                              ),
+
+                          ),
+                        ),
+
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
+                                child:Text('We welcome all kind of booking for picnic, meeting etc Also this that the facilities  will be provided to their full potential..',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15.0,
+                                  ),
+
+                                ),
+                              ),
+
+
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                   child: Align(
+                                    alignment: Alignment.centerLeft,
+                                       child: Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                          child:Icon(
+                                            Icons.phone,
+                                            size: 20.0,
+                                            ),
+
+                                          ),
+                                         Text('+92 3452564180',
+                                            style: TextStyle(
+                                              color: Colors.black87,
+                                              fontStyle: FontStyle.normal,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15.0,
+                                            ),
+                                        )
+
+
+                                      ]
+                                  )
+
+
+                                   )
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                              child:Icon(
+                                                Icons.phone,
+                                                size: 20.0,
+                                              ),
+
+                                            ),
+                                            Text('booking@gmail.com',
+                                              style: TextStyle(
+                                                color: Colors.black87,
+                                                fontStyle: FontStyle.normal,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            )
+
+
+                                          ]
+                                      )
+
+
+                                  )
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(5, 5, 0, 5),
+                                  child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                              child:Icon(
+                                                Icons.phone,
+                                                size: 20.0,
+                                              ),
+
+                                            ),
+                                       Container(
+                                           margin: EdgeInsets.only(left:10.0),
+                                           child: Text('AlHada Area Mekkah Road,1143',
+                                              style: TextStyle(
+                                                color: Colors.black87,
+                                                fontStyle: FontStyle.normal,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            )
+                                       )
+
+                                          ]
+                                      )
+
+
+                                  )
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                              child:Icon(
+                                                Icons.phone,
+                                                size: 20.0,
+                                              ),
+
+                                            ),
+                                            Text('1400 Person Capacity',
+                                              style: TextStyle(
+                                                color: Colors.black87,
+                                                fontStyle: FontStyle.normal,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            )
+
+
+                                          ]
+                                      )
+
+
+                                  )
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                              child:Icon(
+                                                Icons.phone,
+                                                size: 20.0,
+                                              ),
+
+                                            ),
+                                            Text('19900 SQ FT|1849 SQ M',
+                                              style: TextStyle(
+                                                color: Colors.black87,
+                                                fontStyle: FontStyle.normal,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15.0,
+                                              ),
+                                            )
+
+
+                                          ]
+                                      )
+
+
+                                  )
+                              )
+
+
+                         ],
+
+                        )
+
+
+                      )
                     ),
 
 
