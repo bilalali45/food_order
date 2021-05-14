@@ -99,7 +99,7 @@ class ProductdetailState extends State<Productdetail>
 
             children: <Widget>[
 
-              
+
               SizedBox(
                 height: 240,
                 child: Center(
