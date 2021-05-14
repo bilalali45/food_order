@@ -48,15 +48,35 @@ class OrderState extends State<Order> {
 
 
                               children: <Widget>[
+
                                 ClipRRect(
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(8.0),
                                     topRight: Radius.circular(8.0),
                                   ),
 
-                                  child: Image.network(imgList[index],
-                                      height: 150,
-                                      fit: BoxFit.cover, width: double.infinity),
+                                   child: Stack(
+                                     children: [
+                                       Container(
+                                         child:
+                                         Image.network(imgList[index],
+                                             height: 150,
+                                             fit: BoxFit.cover, width: double.infinity),
+                                       ),
+
+                                         new Positioned(
+                                           right: 0.0,
+                                           bottom: 0.0,
+                                           child: new Icon(Icons.star),
+                                         ),
+
+
+                                      ]
+                                   ),
+
+
+
+
                                   // child: Image.asset('img/britannia.jpg',
                                   //     width: 300,
                                   //     height: 150,
