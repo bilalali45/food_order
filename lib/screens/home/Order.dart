@@ -64,10 +64,13 @@ class OrderState extends State<Order> {
                                              fit: BoxFit.cover, width: double.infinity),
                                        ),
 
-                                         new Positioned(
+                                         new Positioned.fill(
                                            right: 0.0,
                                            bottom: 0.0,
-                                           child: new Icon(Icons.star),
+                                             child: Align(
+                                               alignment: Alignment.topRight,
+                                               child: new Icon(Icons.star),
+                                             )
                                          ),
 
 
