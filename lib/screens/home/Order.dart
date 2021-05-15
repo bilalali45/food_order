@@ -30,146 +30,186 @@ class OrderState extends State<Order> {
           //   title: Text("title"),
           // ),
           body: Container(
-            child: ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: imgList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.all(8.0),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8.0))),
-                          child: InkWell(
-                            onTap: () => print("ciao"),
-                            child: Column(
+
+           child:Column(
+               children: <Widget>[
+                 Container(
+                   width: MediaQuery.of(context).size.width / 1.1,
+                   margin: EdgeInsets.only(top: 30),
+                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(15),
+                     color: Colors.grey.withOpacity(.3),
+                   ),
+                   child: Padding(
+                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                     child: TextField(
+                       decoration: InputDecoration(
+                           icon: Icon(Icons.email_outlined),
+                           fillColor: Colors.white,
+                           border: InputBorder.none,
+                           hintText: "Search"),
+                     ),
+                   ),
+                 ),
+              Expanded(
 
 
-                              children: <Widget>[
+            child:ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: imgList.length,
+              itemBuilder: (BuildContext context, int index) {
+            return Column(
+              children: <Widget>[
+                Container(
 
-                                ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8.0),
-                                    topRight: Radius.circular(8.0),
-                                  ),
-
-                                   child: Stack(
-                                     children: [
-                                       Container(
-                                         child:
-                                         Image.network(imgList[index],
-                                             height: 150,
-                                             fit: BoxFit.cover, width: double.infinity),
-                                       ),
-
-                                         new Positioned.fill(
-                                           right: 0.0,
-                                           bottom: 0.0,
-                                             child: Align(
-                                               alignment: Alignment.topRight,
-                                               child: new Icon(Icons.star),
-                                             )
-                                         ),
+                  margin: EdgeInsets.all(8.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(8.0))),
+                    child: InkWell(
+                      onTap: () => print("ciao"),
+                      child: Column(
 
 
-                                      ]
+                        children: <Widget>[
+
+                          ClipRRect(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(8.0),
+                              topRight: Radius.circular(8.0),
+                            ),
+
+                             child: Stack(
+                               children: [
+                                 Container(
+                                   child:
+                                   Image.network(imgList[index],
+                                       height: 150,
+                                       fit: BoxFit.cover, width: double.infinity),
+                                 ),
+
+                                   new Positioned.fill(
+                                     right: 0.0,
+                                     bottom: 0.0,
+                                       child: Align(
+                                         alignment: Alignment.topRight,
+                                         child: new Icon(Icons.star),
+                                       )
                                    ),
 
 
+                                ]
+                             ),
 
 
-                                  // child: Image.asset('img/britannia.jpg',
-                                  //     width: 300,
-                                  //     height: 150,
-                                  //     fit: BoxFit.fill),
+
+
+                            // child: Image.asset('img/britannia.jpg',
+                            //     width: 300,
+                            //     height: 150,
+                            //     fit: BoxFit.fill),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Padding(
+                                padding: EdgeInsets.fromLTRB(10, 5, 0, 0),
+                                child: Align(
+                                alignment: Alignment.centerLeft,
+
+                                child:Text('The Rizte LOC',
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  ),
+                                )
+
+                                )
                                 ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                      padding: EdgeInsets.fromLTRB(10, 5, 0, 0),
-                                      child: Align(
-                                      alignment: Alignment.centerLeft,
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                                    child: Align(
+                                        alignment: Alignment.centerLeft,
+                                         child:Text('not the loc',
+                                          style: TextStyle(
+                                            color: Colors.black87,
+                                            fontStyle: FontStyle.normal,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15.0,
+                                          ),
+                                        )
 
-                                      child:Text('The Rizte LOC',
-                                        style: TextStyle(
-                                          color: Colors.black87,
-                                          fontStyle: FontStyle.normal,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20.0,
-                                        ),
-                                      )
+                                    )
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(5, 0, 0, 5),
+                                    child: Align(
+                                       alignment: Alignment.centerLeft,
+                                        child:RatingBar.builder(
+                                          initialRating: 3,
+                                          minRating: 1,
+                                          direction: Axis.horizontal,
+                                          allowHalfRating: true,
+                                          itemCount: 5,
+                                          itemSize: 15.0,
+                                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          itemBuilder: (context, _) => Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
+                                          ),
+                                          onRatingUpdate: (rating) {
+                                            print(rating);
+                                          },
+                                        )
 
-                                      )
-                                      ),
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                                          child: Align(
-                                              alignment: Alignment.centerLeft,
-                                               child:Text('not the loc',
-                                                style: TextStyle(
-                                                  color: Colors.black87,
-                                                  fontStyle: FontStyle.normal,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15.0,
-                                                ),
-                                              )
+                                )
 
-                                          )
-                                      ),
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(5, 0, 0, 5),
-                                          child: Align(
-                                             alignment: Alignment.centerLeft,
-                                              child:RatingBar.builder(
-                                                initialRating: 3,
-                                                minRating: 1,
-                                                direction: Axis.horizontal,
-                                                allowHalfRating: true,
-                                                itemCount: 5,
-                                                itemSize: 15.0,
-                                                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                                                itemBuilder: (context, _) => Icon(
-                                                  Icons.star,
-                                                  color: Colors.amber,
-                                                ),
-                                                onRatingUpdate: (rating) {
-                                                  print(rating);
-                                                },
-                                              )
+                                ),
 
-                                      )
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
+                                    child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child:Divider(
+                                            color: Colors.black
+                                        )
 
-                                      ),
+                                    )
 
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
-                                          child: Align(
-                                              alignment: Alignment.centerLeft,
-                                              child:Divider(
-                                                  color: Colors.black
-                                              )
-
-                                          )
-
-                                      ),
+                                ),
 
 
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
-                                          child: Align(
-                                              alignment: Alignment.centerLeft,
-                                              child:Row(
-                                                children: [
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
+                                    child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child:Row(
+                                          children: [
 
 
-                                              Padding(
-                                              padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
-                                               child: Align(
-                                              alignment: Alignment.centerLeft,
-                                                    child:Text('abcdbe',
+                                        Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
+                                         child: Align(
+                                        alignment: Alignment.centerLeft,
+                                              child:Text('abcdbe',
+                                              style: TextStyle(
+                                                color: Colors.black87,
+                                                fontStyle: FontStyle.normal,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12.0,
+                                              ),
+                                            ),
+                                            )
+                                           ),
+                                            Padding(
+                                                padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
+                                                child: Align(
+
+                                                  alignment: Alignment.centerRight,
+                                                  child:Text('abcdbe',
                                                     style: TextStyle(
                                                       color: Colors.black87,
                                                       fontStyle: FontStyle.normal,
@@ -177,71 +217,62 @@ class OrderState extends State<Order> {
                                                       fontSize: 12.0,
                                                     ),
                                                   ),
-                                                  )
-                                                 ),
-                                                  Padding(
-                                                      padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
-                                                      child: Align(
+                                                )
+                                            ),    Padding(
+                                                padding: EdgeInsets.fromLTRB(50, 0, 10, 5),
+                                                child: Align(
+                                                  alignment: Alignment.centerRight,
+                                                    child: Column(
+                                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                                        children: [
+                                                        Container(
 
                                                         alignment: Alignment.centerRight,
                                                         child:Text('abcdbe',
-                                                          style: TextStyle(
-                                                            color: Colors.black87,
-                                                            fontStyle: FontStyle.normal,
-                                                            fontWeight: FontWeight.bold,
-                                                            fontSize: 12.0,
-                                                          ),
-                                                        ),
-                                                      )
-                                                  ),    Padding(
-                                                      padding: EdgeInsets.fromLTRB(50, 0, 10, 5),
-                                                      child: Align(
-                                                        alignment: Alignment.centerRight,
-                                                          child: Column(
-                                                              crossAxisAlignment: CrossAxisAlignment.end,
-                                                              children: [
-                                                              Container(
+                                                         textAlign: TextAlign.end,
 
-                                                              alignment: Alignment.centerRight,
-                                                              child:Text('abcdbe',
-                                                               textAlign: TextAlign.end,
+                                                         style: TextStyle(
+                                                           color: Colors.black87,
+                                                         fontStyle: FontStyle.normal,
+                                                         fontWeight: FontWeight.bold,
+                                                          fontSize: 12.0,
+                                                     ),
+                                                     ),
+                                                   )
+                                                    ]
+                                                    )
 
-                                                               style: TextStyle(
-                                                                 color: Colors.black87,
-                                                               fontStyle: FontStyle.normal,
-                                                               fontWeight: FontWeight.bold,
-                                                                fontSize: 12.0,
-                                                           ),
-                                                           ),
-                                                         )
-                                                          ]
-                                                          )
+                                                )
+                                            )
+                                          ],
+                                        )
 
-                                                      )
-                                                  )
-                                                ],
-                                              )
+                                    )
 
-                                          )
-
-                                      )
+                                )
 
 
 
-                                    ],
-                                  ),
-                                 // title: Text('Pub 1'),
-                                 // subtitle: Text('Location 1'),
-                                ),
                               ],
                             ),
+                           // title: Text('Pub 1'),
+                           // subtitle: Text('Location 1'),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  );
-                }),
+                    ),
+                  ),
+                ),
+              ],
+            );
+
+              }
+             ),
           ),
+          ]
+          )
+          )
+
         ));
   }
 }
