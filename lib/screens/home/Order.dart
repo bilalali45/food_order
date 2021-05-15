@@ -46,21 +46,28 @@ class OrderState extends State<Order> {
                        decoration: InputDecoration(
                            fillColor: Colors.white,
                            border: InputBorder.none,
-                           hintText: "Search",
+
                            suffixIcon:Container(
                                alignment: Alignment.centerRight,
                              child: Row(
                                mainAxisAlignment: MainAxisAlignment.end,
 
                                children: [
-                                 Icon(Icons.search),
-                                 Icon(Icons.filter),
+                                 Padding(
+                                   padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
+                                   child:Icon(Icons.search),
+                                 ),Padding(
+                                   padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
+                                   child: Icon(Icons.filter_9_plus_rounded),
+                                 )
+
+
 
                                ],
                              ),
 
 
-                           )
+                           ), hintText: "Search",
 
                        )
 
