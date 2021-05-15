@@ -44,10 +44,29 @@ class OrderState extends State<Order> {
                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                      child: TextField(
                        decoration: InputDecoration(
-                           icon: Icon(Icons.email_outlined),
                            fillColor: Colors.white,
                            border: InputBorder.none,
-                           hintText: "Search"),
+                           hintText: "Search",
+                           suffixIcon:Container(
+                               alignment: Alignment.centerRight,
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.end,
+
+                               children: [
+                                 Icon(Icons.search),
+                                 Icon(Icons.filter),
+
+                               ],
+                             ),
+
+
+                           )
+
+                       )
+
+
+
+
                      ),
                    ),
                  ),
