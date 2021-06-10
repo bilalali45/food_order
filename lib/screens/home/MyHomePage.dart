@@ -1,3 +1,4 @@
+import 'package:food_order/screens/home/Account.dart';
 import 'package:food_order/screens/home/Histroy.dart';
 import 'package:food_order/screens/home/HomeScreen.dart';
 import 'package:food_order/screens/home/Order.dart';
@@ -25,8 +26,9 @@ class _MyHomePageState extends State<MyHomePage> {
         HomeScreen(),
          Order(),
          Histroy(),
-         Setting()
+         Account()
   ];
+
   Widget currentScreen = HomeScreen();
 
   final PageStorageBucket bucket = PageStorageBucket();

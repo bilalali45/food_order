@@ -101,10 +101,10 @@ class OrderState extends State<Order> {
                         children: <Widget>[
 
                           ClipRRect(
-                            borderRadius: BorderRadius.only(
+                               borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(8.0),
                               topRight: Radius.circular(8.0),
-                            ),
+                                ),
 
                              child: Stack(
                                children: [
@@ -189,9 +189,9 @@ class OrderState extends State<Order> {
                                           onRatingUpdate: (rating) {
                                             print(rating);
                                           },
-                                        )
+                                     )
 
-                                )
+                                   )
 
                                 ),
 
@@ -226,9 +226,9 @@ class OrderState extends State<Order> {
                                                 fontStyle: FontStyle.normal,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 12.0,
+                                               ),
                                               ),
-                                            ),
-                                            )
+                                             )
                                            ),
                                             Padding(
                                                 padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
@@ -268,8 +268,8 @@ class OrderState extends State<Order> {
                                                     ]
                                                     )
 
-                                                )
-                                            )
+                                                 )
+                                              )
                                           ],
                                         )
 

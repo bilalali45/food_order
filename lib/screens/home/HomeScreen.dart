@@ -101,7 +101,7 @@ data(BuildContext context) {
                   child: new Column(children: <Widget>[
                     new Padding(
                       padding: new EdgeInsets.all(3.0),
-                      child: Image.network(url, height: 120, fit: BoxFit.cover),
+                      child: Image.network(url, height: 100, fit: BoxFit.cover),
                     ),
                     new Padding(
                         padding: new EdgeInsets.all(0.0),
@@ -114,7 +114,7 @@ data(BuildContext context) {
                                   textAlign: TextAlign.center,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 20.0),
+                                      fontWeight: FontWeight.bold, fontSize: 16.0),
                                 ),
                               ),
                               Text(
@@ -122,14 +122,14 @@ data(BuildContext context) {
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15.0),
+                                    fontWeight: FontWeight.bold, fontSize: 12.0),
                               ),
                               Text(
                                 'Product Name',
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 10.0),
+                                 fontWeight: FontWeight.bold, fontSize: 8.0),
                               )
                             ]))),
                   ])));
@@ -137,20 +137,20 @@ data(BuildContext context) {
   );
 }
 
-void _navigateToNextScreen(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Productdetail()));
-}
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Productdetail()));
+  }
 
 
 void showInSnackBar(String value, BuildContext context) {
-  final snackBar = SnackBar(
-    content: Text('Yay! A SnackBar!'),
-    action: SnackBarAction(
-      label: 'Undo',
-      onPressed: () {
-        // Some code to undo the change.
-      },
-    ),
-  );
-  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    final snackBar = SnackBar(
+      content: Text('Yay! A SnackBar!'),
+      action: SnackBarAction(
+        label: 'Undo',
+        onPressed: () {
+          // Some code to undo the change.
+        },
+      ),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }

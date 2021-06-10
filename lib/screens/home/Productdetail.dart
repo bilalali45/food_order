@@ -113,9 +113,9 @@ class ProductdetailState extends State<Productdetail>
                               _currentpage = index.toDouble();
                             });
                           },
-                          enlargeCenterPage: true),
-                           carouselController: _controllerpager,
-                           items: imageSliders()
+                            enlargeCenterPage: true),
+                            carouselController: _controllerpager,
+                            items: imageSliders()
                         ),
 
 
@@ -171,8 +171,6 @@ class ProductdetailState extends State<Productdetail>
 
 
                       child: TabBar(
-
-
 
                         controller: _tabController,
                         isScrollable: false,
@@ -235,8 +233,8 @@ class ProductdetailState extends State<Productdetail>
                                       child: Image(
                                           image: AssetImage(facilities),
                                           fit: BoxFit.cover,
-                                          width: 40,
-                                          height: 30),
+                                          width: 30,
+                                          height: 25),
                                     ),
                                     Container(
                                         margin: const EdgeInsets.only(top: 5.0),
@@ -260,7 +258,7 @@ class ProductdetailState extends State<Productdetail>
                                         image: AssetImage(gallery_img),
                                         fit: BoxFit.cover,
                                         width: 30,
-                                        height: 30,
+                                        height: 25,
                                       ),
                                     ),
                                     Container(
@@ -284,8 +282,8 @@ class ProductdetailState extends State<Productdetail>
                                       child: Image(
                                         image: AssetImage(dateavailable_img),
                                         fit: BoxFit.cover,
-                                        width: 30,
-                                        height: 30,
+                                        width: 35,
+                                        height: 20,
                                       ),
                                     ),
                                     Container(
@@ -311,7 +309,7 @@ class ProductdetailState extends State<Productdetail>
                                         image: AssetImage(location_icon),
                                         fit: BoxFit.cover,
                                         width: 30,
-                                        height: 30,
+                                        height: 25,
                                       ),
                                     ),
                                     Container(
@@ -343,7 +341,7 @@ class ProductdetailState extends State<Productdetail>
                   controller: _tabController,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 30, top: 30, right: 30, bottom: 70),
+                      margin: EdgeInsets.only(left: 30, top: 20, right: 30, bottom: 20),
                       height: 70,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -376,10 +374,10 @@ class ProductdetailState extends State<Productdetail>
 
                         //length: 5,
                         child: Column(
-                            children: <Widget>[
+                        children: <Widget>[
 
                         Padding(
-                        padding: EdgeInsets.fromLTRB(0, 20, 20, 5),
+                        padding: EdgeInsets.fromLTRB(0, 10, 20, 5),
 
                          child:Text('About',
                             textAlign: TextAlign.left,
@@ -387,21 +385,21 @@ class ProductdetailState extends State<Productdetail>
                                 color: Colors.black87,
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+                                fontSize: 16.0,
                               ),
 
                           ),
                         ),
 
                               Padding(
-                                padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
+                                padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
                                 child:Text('We welcome all kind of booking for picnic, meeting etc Also this that the facilities  will be provided to their full potential..',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     color: Colors.black87,
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 15.0,
+                                    fontSize: 12.0,
                                   ),
 
                                 ),
@@ -413,7 +411,7 @@ class ProductdetailState extends State<Productdetail>
                                    child: Align(
                                     alignment: Alignment.centerLeft,
                                        child: Row(
-                                      children: <Widget>[
+                                        children: <Widget>[
                                         Padding(
                                           padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                                           child:Icon(
@@ -427,7 +425,7 @@ class ProductdetailState extends State<Productdetail>
                                               color: Colors.black87,
                                               fontStyle: FontStyle.normal,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 15.0,
+                                              fontSize: 12.0,
                                             ),
                                         )
 
@@ -457,7 +455,7 @@ class ProductdetailState extends State<Productdetail>
                                                 color: Colors.black87,
                                                 fontStyle: FontStyle.normal,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 15.0,
+                                                fontSize: 12.0,
                                               ),
                                             )
 
@@ -489,7 +487,7 @@ class ProductdetailState extends State<Productdetail>
                                                 color: Colors.black87,
                                                 fontStyle: FontStyle.normal,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 15.0,
+                                                fontSize: 12.0,
                                               ),
                                             )
                                        )
@@ -519,7 +517,7 @@ class ProductdetailState extends State<Productdetail>
                                                 color: Colors.black87,
                                                 fontStyle: FontStyle.normal,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 15.0,
+                                                fontSize: 12.0,
                                               ),
                                             )
 
@@ -549,7 +547,7 @@ class ProductdetailState extends State<Productdetail>
                                                 color: Colors.black87,
                                                 fontStyle: FontStyle.normal,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 15.0,
+                                                fontSize: 12.0,
                                               ),
                                             )
 
