@@ -314,11 +314,11 @@ class ProductdetailState extends State<Productdetail>
                                     ),
                                     Container(
                                         margin: const EdgeInsets.only(top: 5.0),
-                                        child: Text("OUR LOCATION",
-                                            style: TextStyle(
+                                         child: Text("OUR LOCATION",
+                                                style: TextStyle(
                                                 color: Colors.black38,
                                                 fontSize: 6),
-                                            textScaleFactor: 1.1)),
+                                                textScaleFactor: 1.1)),
                                   ],
                                 )),
                           ),
