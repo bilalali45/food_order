@@ -90,7 +90,7 @@ data(BuildContext context) {
           'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
           'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
           'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
-        ].map((String url) {
+           ].map((String url) {
           return GestureDetector(
               onTap: () {
                 showInSnackBar("test", context);
