@@ -71,7 +71,7 @@ data(BuildContext context) {
           'https://media.istockphoto.com/photos/buffet-and-catering-table-picture-id493760052?k=6&m=493760052&s=612x612&w=0&h=YuJIsfe9uq3U1iQ7LmueUA_g-9lOQMe1Wt4pI7aTs2Q=',
           'https://media.istockphoto.com/photos/everything-is-almost-finished-for-wedding-ceremony-picture-id1161558644?k=6&m=1161558644&s=612x612&w=0&h=D0WrdOslIzMReNL-LdirXwN65g02JTsYk2uIjr-EkhU=',
           'https://media.istockphoto.com/photos/banquet-hall-decorated-for-special-occasion-picture-id498080343?k=6&m=498080343&s=612x612&w=0&h=ROMutRletcc5rChGhwvqKEi6UeJuLkF5jh3PCS7ldBo=',
-          'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          'https://media.istockphoto.com/photos/banquet-hall-decorated-for-special-occasion-picture-id498080343?k=6&m=498080343&s=612x612&w=0&h=ROMutRletcc5rChGhwvqKEi6UeJuLkF5jh3PCS7ldBo=',
           'https://media.istockphoto.com/photos/wedding-reception-chairs-for-wedding-couple-with-bride-and-groom-picture-id1144984626?k=6&m=1144984626&s=612x612&w=0&h=CkGpmU6m1rOELXMjFdKrI8QmwPQF5mxOd_lB1g_QbrE=',
           'https://media.istockphoto.com/photos/elegant-banquet-hall-with-pink-lights-picture-id486063276?k=6&m=486063276&s=612x612&w=0&h=zoYX4u0r6s7VbEYOsVUGU0bNniIWpMmLRet5F5wr8Xc=',
           'https://media.istockphoto.com/photos/elegant-banquet-hall-with-pink-lights-picture-id486063276?k=6&m=486063276&s=612x612&w=0&h=zoYX4u0r6s7VbEYOsVUGU0bNniIWpMmLRet5F5wr8Xc=',
