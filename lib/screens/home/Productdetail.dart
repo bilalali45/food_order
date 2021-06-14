@@ -667,26 +667,19 @@ class ProductdetailState extends State<Productdetail>
                             mainAxisSpacing: 10.0,
                             crossAxisSpacing: 10.0,
                             children: <String>[
-                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
-                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
-                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
-                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
-                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
-                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
-                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
-                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
-                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
-                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
-                              'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
-                              'https://post.healthline.com/wp-content/uploads/2020/08/ways-to-make-coffee-super-healthy-1200x628-facebook-1200x628.jpg',
-                              'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                              'https://image.freepik.com/free-vector/espresso-coffee-cup-coffee-beans_79603-1038.jpg',
-                              'https://image.shutterstock.com/image-photo/mountains-under-mist-morning-amazing-260nw-1725825019.jpg',
+                              'https://media.istockphoto.com/photos/large-room-set-up-for-a-banquet-round-tables-picture-id178992732',
+                              'https://media.istockphoto.com/photos/wedding-reception-picture-id522240329?s=612x612',
+                              'https://media.istockphoto.com/photos/photo-of-served-festive-table-with-dishes-picture-id803717652?s=612x612',
+                              'https://media.istockphoto.com/photos/banquet-hall-picture-id1060895354?k=6&m=1060895354&s=612x612&w=0&h=nRWFv7XFQ3BNIrVKRRkq5RUCpHmqlKdtpH3clmQcM9E=',
+                              'https://media.istockphoto.com/photos/buffet-and-catering-table-picture-id493760052?k=6&m=493760052&s=612x612&w=0&h=YuJIsfe9uq3U1iQ7LmueUA_g-9lOQMe1Wt4pI7aTs2Q=',
+                              'https://media.istockphoto.com/photos/everything-is-almost-finished-for-wedding-ceremony-picture-id1161558644?k=6&m=1161558644&s=612x612&w=0&h=D0WrdOslIzMReNL-LdirXwN65g02JTsYk2uIjr-EkhU=',
+                              'https://media.istockphoto.com/photos/banquet-hall-decorated-for-special-occasion-picture-id498080343?k=6&m=498080343&s=612x612&w=0&h=ROMutRletcc5rChGhwvqKEi6UeJuLkF5jh3PCS7ldBo=',
+                              'https://media.istockphoto.com/photos/banquet-hall-decorated-for-special-occasion-picture-id498080343?k=6&m=498080343&s=612x612&w=0&h=ROMutRletcc5rChGhwvqKEi6UeJuLkF5jh3PCS7ldBo=',
+                              'https://media.istockphoto.com/photos/wedding-reception-chairs-for-wedding-couple-with-bride-and-groom-picture-id1144984626?k=6&m=1144984626&s=612x612&w=0&h=CkGpmU6m1rOELXMjFdKrI8QmwPQF5mxOd_lB1g_QbrE=',
+                              'https://media.istockphoto.com/photos/elegant-banquet-hall-with-pink-lights-picture-id486063276?k=6&m=486063276&s=612x612&w=0&h=zoYX4u0r6s7VbEYOsVUGU0bNniIWpMmLRet5F5wr8Xc=',
+                              'https://media.istockphoto.com/photos/elegant-banquet-hall-with-pink-lights-picture-id486063276?k=6&m=486063276&s=612x612&w=0&h=zoYX4u0r6s7VbEYOsVUGU0bNniIWpMmLRet5F5wr8Xc=',
+                              'https://media.istockphoto.com/photos/elegant-banquet-hall-with-pink-lights-picture-id486063276?k=6&m=486063276&s=612x612&w=0&h=zoYX4u0r6s7VbEYOsVUGU0bNniIWpMmLRet5F5wr8Xc=',
+                              'https://media.istockphoto.com/photos/elegant-banquet-hall-with-pink-lights-picture-id486063276?k=6&m=486063276&s=612x612&w=0&h=zoYX4u0r6s7VbEYOsVUGU0bNniIWpMmLRet5F5wr8Xc='
                             ].map((String url) {
                               return GestureDetector(
                                   child:GridTile(
@@ -765,7 +758,9 @@ class ProductdetailState extends State<Productdetail>
                     Container(
                       child: Center(
                         child: GoogleMap(
-                          onMapCreated: _onMapCreated,
+                          onMapCreated: (GoogleMapController controller) {
+                            _controller.complete(controller);
+                          },
                           initialCameraPosition: CameraPosition(
                             target: _center,
                             zoom: 11.0,

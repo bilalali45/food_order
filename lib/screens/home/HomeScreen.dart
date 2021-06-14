@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order/screens/home/Productdetail.dart';
+import 'package:food_order/screens/home/googlemap.dart';
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -21,9 +22,12 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
 
+
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
+
+
 
 
       // body: GoogleMap(
@@ -123,7 +127,7 @@ data(BuildContext context) {
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                 fontWeight: FontWeight.bold, fontSize: 8.0),
+                                fontWeight: FontWeight.bold, fontSize: 8.0),
                               )
                             ]))),
                   ])));
@@ -133,6 +137,8 @@ data(BuildContext context) {
 
   void _navigateToNextScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Productdetail()));
+
+   // Navigator.of(context).push(MaterialPageRoute(builder: (context) => googlemap()));
   }
 
 

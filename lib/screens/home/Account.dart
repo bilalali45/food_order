@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
+
 class Account extends StatefulWidget {
   Account();
 
@@ -29,7 +31,7 @@ class AccountState extends State<Account> {
                               "https://image.shutterstock.com/image-photo/young-woman-using-wireless-earphones-600w-1841881210.jpg")))),
               Container(
                   child: Column(
-crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
 
                       Container(margin: EdgeInsets.all(10),
@@ -99,6 +101,50 @@ crossAxisAlignment: CrossAxisAlignment.start,
                   ))
             ],
           ),
+        ),Container(
+
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                   new Container(
+                      width: 100.0,
+                      height: 100.0,
+
+                        child: Row(
+                          children: [
+                            Text(
+                                "Email Address",textAlign: TextAlign.left,
+                                 style: TextStyle(color: Colors.black38, fontSize: 12),
+                                 textScaleFactor: 1.1,
+                                ),
+
+                              FlutterSwitch(
+                                height: 20.0,
+                                width: 40.0,
+                                padding: 4.0,
+                                toggleSize: 15.0,
+                                borderRadius: 10.0,
+                                activeColor: lets_cyan,
+                                value: isToggled,
+                                onToggle: (value) {
+                                  setState(() {
+                                    isToggled = value;
+                                  });
+                                },
+                              ),
+
+
+                          ]
+                        )
+
+
+
+                  )
+
+              ]
+        )
         )
       ]),
     ));
