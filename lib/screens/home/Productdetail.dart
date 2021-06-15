@@ -480,7 +480,7 @@ class ProductdetailState extends State<Productdetail>
 
 
                                       ]
-                                  )
+                                     )
 
 
                                    )
@@ -633,8 +633,7 @@ class ProductdetailState extends State<Productdetail>
                                      /// child: Text('Entry ${entries[index]}')
 
                                       child: Container(
-
-                                        margin: EdgeInsets.all(10),
+                                          margin: EdgeInsets.all(10),
                                         padding: EdgeInsets.all(10),
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
@@ -646,7 +645,7 @@ class ProductdetailState extends State<Productdetail>
                                                  Radius.circular(10.0)), // Set rounded corner radius
                                                  boxShadow: [BoxShadow(blurRadius: 10,color: Colors.black,offset: Offset(1,3))] // Make rounded corner of border
                                         ),
-                                        child: Text('Entry ${entries[index]}'),
+                                          child: Text('Entry ${entries[index]}'),
                                       )
 
                                   ),

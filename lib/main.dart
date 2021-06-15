@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_order/screens/registration/LoginPage.dart';
 import 'package:food_order/screens/splash/SplashScreen.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-         home: SplashScreen(),
+         home: LoginPage(),
     );
   }
 }

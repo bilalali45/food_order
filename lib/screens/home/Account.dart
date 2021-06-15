@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-
 class Account extends StatefulWidget {
   Account();
 
@@ -11,6 +9,7 @@ class Account extends StatefulWidget {
 }
 
 class AccountState extends State<Account> {
+  bool isSwitched = false;
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
@@ -27,8 +26,7 @@ class AccountState extends State<Account> {
                       shape: BoxShape.circle,
                       image: new DecorationImage(
                           fit: BoxFit.fill,
-                          image: new NetworkImage(
-                              "https://image.shutterstock.com/image-photo/young-woman-using-wireless-earphones-600w-1841881210.jpg")))),
+                          image: new NetworkImage("https://image.shutterstock.com/image-photo/young-woman-using-wireless-earphones-600w-1841881210.jpg")))),
               Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,10 +66,6 @@ class AccountState extends State<Account> {
                         ),
                       ),
 
-
-
-
-
                       // new Container(
                       //   width: 100.0,
                       //   height: 50.0,
@@ -105,43 +99,103 @@ class AccountState extends State<Account> {
 
         padding: EdgeInsets.all(20.0),
         child: Column(
-
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
                    new Container(
-                      width: 100.0,
-                      height: 100.0,
+                       child: Row(
 
-                        child: Row(
-                          children: [
-                            Text(
-                                "Email Address",textAlign: TextAlign.left,
-                                 style: TextStyle(color: Colors.black38, fontSize: 12),
-                                 textScaleFactor: 1.1,
+                            children: [
+
+
+
+                              Expanded(
+                                child: Container(
+                                  width: 100,
+                                  child: Text(
+                                    "Notification", textAlign: TextAlign.left,
+                                    style: TextStyle(color: Colors.black38, fontSize: 12),
+                                    textScaleFactor: 1.1,
+                                  ),
+
                                 ),
-
-                              FlutterSwitch(
-                                height: 20.0,
-                                width: 40.0,
-                                padding: 4.0,
-                                toggleSize: 15.0,
-                                borderRadius: 10.0,
-                                activeColor: lets_cyan,
-                                value: isToggled,
-                                onToggle: (value) {
-                                  setState(() {
-                                    isToggled = value;
-                                  });
-                                },
                               ),
-
-
+                                  Switch(
+                                    value: isSwitched,
+                                    onChanged: (value) {
+                                    setState(() {
+                                      isSwitched = value;
+                                      print(isSwitched);
+                                    });
+                                   },
+                                    activeTrackColor: Colors.lightGreenAccent,
+                                    activeColor: Colors.green,
+                                  )
                           ]
                         )
 
 
 
-                  )
+                  ),     new Container(
+                  child: Row(
+
+                      children: [
+
+                          Expanded(
+                          child: Container(
+                            width: 100,
+                            child: Text(
+                              "Notification", textAlign: TextAlign.left,
+                              style: TextStyle(color: Colors.black38, fontSize: 12),
+                              textScaleFactor: 1.1,
+                            ),
+
+                          ),
+                        ),
+                        Switch(
+                          value: isSwitched,
+                          onChanged: (value) {
+                            setState(() {
+                              isSwitched = value;
+                              print(isSwitched);
+                            });
+                          },
+                          activeTrackColor: Colors.lightGreenAccent,
+                          activeColor: Colors.green,
+                        )
+                      ]
+                  ),
+
+
+
+              ), new Container(
+                child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: 100,
+                          child: Text(
+                            "Notification", textAlign: TextAlign.left,
+                            style: TextStyle(color: Colors.black38, fontSize: 12),
+                            textScaleFactor: 1.1,
+                          ),
+
+                        ),
+                      ),
+                      Switch(
+                          value: isSwitched,
+                          onChanged: (value) {
+                            setState(() {
+                              isSwitched = value;
+                              print(isSwitched);
+                            });
+                          },
+                          activeTrackColor: Colors.lightGreenAccent,
+                          activeColor: Colors.green,
+                      )
+                    ]
+                ),
+              )
 
               ]
         )

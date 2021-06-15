@@ -24,7 +24,7 @@ class SettingState extends State<Setting> {
 
                        )
 
-                           ),
+                     ),
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
@@ -36,14 +36,14 @@ class SettingState extends State<Setting> {
                            color: Colors.grey.withOpacity(.3),
                          ),
                          child: Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                           child: TextField(
-                             decoration: InputDecoration(
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                             child: TextField(
+                              decoration: InputDecoration(
                                  icon: Icon(Icons.email_outlined),
                                  fillColor: Colors.white,
                                  border: InputBorder.none,
                                  hintText: "Email"),
-                           ),
+                             ),
                          ),
                        ),
                      ],
@@ -117,6 +117,9 @@ class SettingState extends State<Setting> {
                        ),
                      ],
                    ),
+
+
+
 
                  ],
 
