@@ -30,10 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   Widget currentScreen = HomeScreen();
-
   final PageStorageBucket bucket = PageStorageBucket();
-
-
 
   @override
   Widget build(BuildContext context) {
