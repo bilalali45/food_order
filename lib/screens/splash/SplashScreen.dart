@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:food_order/constants/assests_image.dart';
 import 'package:food_order/screens/home/MyHomePage.dart';
+import 'package:food_order/screens/registration/LoginPage.dart';
 import 'package:food_order/widgets/loading.dart';
 
 
@@ -14,7 +15,7 @@ class SplashScreen extends StatelessWidget {
         Duration(seconds: 3),
             () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => MyHomePage())));
+                builder: (BuildContext context) => LoginPage())));
 
     return Scaffold(
       backgroundColor: Colors.white,
