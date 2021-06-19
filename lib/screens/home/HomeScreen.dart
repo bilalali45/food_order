@@ -28,7 +28,76 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
 
 
-
+        drawer: Drawer(child: ListView(
+          children: <Widget>[
+            Container(
+              child: UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"),
+                ),
+                accountName: Text(
+                  "John Paul",
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                accountEmail: Text(
+                  "johnpaul@example.com",
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('My Files'),
+              leading: Icon(Icons.folder),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Shared with me'),
+              leading: Icon(Icons.people),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Starred'),
+              leading: Icon(Icons.star),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Recent'),
+              leading: Icon(Icons.timer),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Offline'),
+              leading: Icon(Icons.offline_pin),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Uploads'),
+              leading: Icon(Icons.file_upload),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Backups'),
+              leading: Icon(Icons.backup),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+          ],
+        ),
+        ),
 
       // body: GoogleMap(
       //     onMapCreated: _onMapCreated,
@@ -99,7 +168,7 @@ data(BuildContext context) {
               child : Card(
               shape: RoundedRectangleBorder(
                   borderRadius:
-              BorderRadius.all(Radius.circular(8.0))),
+                  BorderRadius.all(Radius.circular(8.0))),
                   child: new Column(children: <Widget>[
                     new Padding(
                       padding: new EdgeInsets.all(3.0),
