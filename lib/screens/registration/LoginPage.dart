@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:food_order/screens/home/HomeScreen.dart';
 import 'package:food_order/screens/registration/bezierContainer.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:food_order/screens/home/MyHomePage.dart';
 
 

@@ -96,10 +96,14 @@ data(BuildContext context) {
                 _navigateToNextScreen(context);
               },
               child:GridTile(
+              child : Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+              BorderRadius.all(Radius.circular(8.0))),
                   child: new Column(children: <Widget>[
                     new Padding(
                       padding: new EdgeInsets.all(3.0),
-                      child: Image.network(url, height: 100, fit: BoxFit.cover),
+                      child: Image.network(url, height: 120,width: MediaQuery.of(context).size.width, fit: BoxFit.cover),
                     ),
                     new Padding(
                         padding: new EdgeInsets.all(0.0),
@@ -115,22 +119,31 @@ data(BuildContext context) {
                                       fontWeight: FontWeight.bold, fontSize: 16.0),
                                 ),
                               ),
-                              Text(
+
+                          new Padding(
+                            padding: new EdgeInsets.all(2.0),
+
+                          child: Text(
                                 'Product Name',
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 12.0),
                               ),
-                              Text(
+                        ),
+                         new Padding(
+                             padding: new EdgeInsets.all(2.0),
+
+                             child: Text(
                                 'Product Name',
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 8.0),
                               )
+                          )
                             ]))),
-                  ])));
+                  ]))));
         }).toList()),
   );
 }
