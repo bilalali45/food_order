@@ -3,6 +3,7 @@ import 'package:food_order/screens/home/Histroy.dart';
 import 'package:food_order/screens/home/HomeScreen.dart';
 import 'package:food_order/screens/home/Order.dart';
 import 'package:food_order/screens/home/Setting.dart';
+import 'package:food_order/screens/registration/LoginPage.dart';
 import 'package:path/path.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -121,6 +122,16 @@ class _MyHomePageState extends State<MyHomePage> {
             leading: Icon(Icons.backup),
             onTap: () {
               print("Clicked");
+            },
+          ),
+
+
+          ListTile(
+            title: Text('Logout'),
+            leading: Icon(Icons.backup),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => LoginPage()));
             },
           ),
         ],

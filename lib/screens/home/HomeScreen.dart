@@ -25,12 +25,12 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext ctx) {
-    return Scaffold(
 
 
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
 
-
-
+       child: Scaffold(
 
 
       // body: GoogleMap(
@@ -39,10 +39,12 @@ class HomeScreenState extends State<HomeScreen> {
       //       target: _center,
       //       zoom: 11.0,
       //     ),
+
+
        body: Center(child: Column(children: [data(context)]))
 
 
-
+    )
 
 
       // )
@@ -100,13 +102,13 @@ data(BuildContext context) {
               },
 
               child: Container(
-              margin: const EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.all(10.0),
               child:GridTile(
                   child : Card(
-
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                   borderRadius:
-                  BorderRadius.all(Radius.circular(8.0))),
+                  BorderRadius.all(Radius.circular(10.0))),
                       child: new Column(children: <Widget>[
                     ClipRRect(
                         borderRadius: BorderRadius.only(
@@ -119,7 +121,7 @@ data(BuildContext context) {
                               Container(
                                 child:
                                 Image.network(url,
-                                    height: 130,
+                                    height: 100,
                                     fit: BoxFit.cover, width: double.infinity),
                               ),
 
@@ -149,7 +151,7 @@ data(BuildContext context) {
                               new Padding(
                                 padding: new EdgeInsets.all(2.0),
                                 child: Text(
-                                  'Product Name',
+                                  'The Venue',
                                   textAlign: TextAlign.center,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -161,7 +163,7 @@ data(BuildContext context) {
                             padding: new EdgeInsets.all(2.0),
 
                           child: Text(
-                                'Product Name',
+                                'New York Lc, entc',
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
@@ -172,7 +174,7 @@ data(BuildContext context) {
                              padding: new EdgeInsets.all(2.0),
 
                              child: Text(
-                                'Product Name',
+                                'discription',
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(

@@ -40,7 +40,12 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext ctx) {
     final height = MediaQuery.of(context).size.height;
-    return Scaffold(
+
+
+    return WillPopScope(
+        onWillPop: () => Future.value(false),
+
+        child : Scaffold(
       body: Container(
         height: height,
         child: Stack(
@@ -80,7 +85,11 @@ class LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
-    );
+        )
+      );
+
+
+
   }
 
   Widget _createAccountLabel() {
@@ -108,9 +117,9 @@ class LoginPageState extends State<LoginPage> {
             Text(
               'Register',
               style: TextStyle(
-                  color: Color(0xff00b0ff),
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600),
+                   color: Color(0xff00b0ff),
+                   fontSize: 13,
+                   fontWeight: FontWeight.w600),
             ),
           ],
         ),

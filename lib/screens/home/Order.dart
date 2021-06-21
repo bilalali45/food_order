@@ -43,6 +43,7 @@ class OrderState extends State<Order> {
                    child: Padding(
                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                      child: TextField(
+
                        decoration: InputDecoration(
                            fillColor: Colors.white,
                            border: InputBorder.none,
@@ -78,14 +79,12 @@ class OrderState extends State<Order> {
                    ),
                  ),
               Expanded(
-
-
-            child:ListView.builder(
-              padding: const EdgeInsets.all(8),
-              itemCount: imgList.length,
-              itemBuilder: (BuildContext context, int index) {
-            return Column(
-              children: <Widget>[
+               child:ListView.builder(
+               padding: const EdgeInsets.all(8),
+               itemCount: imgList.length,
+               itemBuilder: (BuildContext context, int index) {
+               return Column(
+               children: <Widget>[
                 Container(
 
                   margin: EdgeInsets.all(8.0),
