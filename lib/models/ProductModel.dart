@@ -14,11 +14,13 @@ class ProductModel{
   ProductModel({this.id, this.image, this.name, this.brand, this.price});
 
   ProductModel.fromMap(Map<String, dynamic> data){
-    id = data[ID];
+
+    id =  data[ID];
     image = data[IMAGE];
     name = data[NAME];
     brand = data[BRAND];
     price = data[PRICE].toDouble();
+
   }
 
 }

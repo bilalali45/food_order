@@ -98,16 +98,50 @@ data(BuildContext context) {
                 //builder: (context) => Productdetail();
                 _navigateToNextScreen(context);
               },
+
+              child: Container(
+              margin: const EdgeInsets.only(top: 10.0),
               child:GridTile(
-              child : Card(
-              shape: RoundedRectangleBorder(
+                  child : Card(
+
+                      shape: RoundedRectangleBorder(
                   borderRadius:
                   BorderRadius.all(Radius.circular(8.0))),
-                  child: new Column(children: <Widget>[
-                    new Padding(
-                      padding: new EdgeInsets.all(3.0),
-                      child: Image.network(url, height: 120,width: MediaQuery.of(context).size.width, fit: BoxFit.cover),
+                      child: new Column(children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(8.0),
+                          topRight: Radius.circular(8.0),
+                        ),
+
+                        child: Stack(
+                            children: [
+                              Container(
+                                child:
+                                Image.network(url,
+                                    height: 130,
+                                    fit: BoxFit.cover, width: double.infinity),
+                              ),
+
+                              new Positioned.fill(
+                                  right: 0.0,
+                                  bottom: 0.0,
+                                  child: Align(
+                                    alignment: Alignment.topRight,
+                                    child: new Icon(Icons.star),
+                                  )
+                              ),
+
+
+                            ]
+                        ),
+
                     ),
+
+
+                     /// padding: new EdgeInsets.all(3.0),
+                     // child: Image.network(url, height: 120,width: MediaQuery.of(context).size.width, fit: BoxFit.cover),
+
                     new Padding(
                         padding: new EdgeInsets.all(0.0),
                         child: Container(
@@ -146,7 +180,9 @@ data(BuildContext context) {
                               )
                           )
                             ]))),
-                  ]))));
+                  ]
+                   ))
+              )));
         }).toList()),
   );
 }

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:food_order/constants/assests_image.dart';
 import 'package:food_order/screens/home/MyHomePage.dart';
@@ -22,12 +21,12 @@ class SplashScreen extends StatelessWidget {
         body: new Stack(
             children: <Widget>[
         new Container(
-            constraints: BoxConstraints.expand(),
+               constraints: BoxConstraints.expand(),
                decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(background),
-                    //image: NetworkImage("https://flutter-examples.com/wp-content/uploads/2020/02/dice.jpg"),
-                    fit: BoxFit.cover)
+                    // image: NetworkImage("https://flutter-examples.com/wp-content/uploads/2020/02/dice.jpg"),
+                     fit: BoxFit.cover)
 
 
             ),
@@ -35,29 +34,27 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(splash_logo, width: 200,height: 200,),
-                    SizedBox(height: 10,),
-                    Loading()
-                  ],
+                     Image.asset(splash_logo, width: 200,height: 200,),
+                     SizedBox(height: 10,),
+                     Loading()
+                    ],
               ),
 
     )
 
 
-    // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   children: [
-      //     Image.asset(splash_logo, width: 120,),
-      //     SizedBox(height: 10,),
-      //     Loading()
-      //   ],
-      // ),
+          //    body: Column(
+          //    mainAxisAlignment: MainAxisAlignment.center,
+          //    children: [
+          //     Image.asset(splash_logo, width: 120,),
+          //     SizedBox(height: 10,),
+          //     Loading()
+          //     ],
+          //    ),
 
 
        )
-
-
-     ]
+      ]
      )
     );
   }

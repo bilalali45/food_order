@@ -44,10 +44,10 @@ class AccountState extends State<Account> {
                       ),
 
                         Container(margin: EdgeInsets.all(10),
-                          height: 20,
+                           height: 20,
                            width: 80,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
+                           alignment: Alignment.centerLeft,
+                           child: Text(
                             "Full Name",textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.black38, fontSize: 12),
                             textScaleFactor: 1.1,
@@ -104,10 +104,7 @@ class AccountState extends State<Account> {
 
                    new Container(
                        child: Row(
-
-                            children: [
-
-
+                           children: [
 
                               Expanded(
                                 child: Container(
@@ -198,7 +195,7 @@ class AccountState extends State<Account> {
               )
 
               ]
-        )
+          )
         )
       ]),
     ));
