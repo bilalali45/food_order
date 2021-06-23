@@ -26,7 +26,7 @@ class AccountState extends State<Account> {
                       shape: BoxShape.circle,
                       image: new DecorationImage(
                           fit: BoxFit.fill,
-                          image: new NetworkImage("https://image.shutterstock.com/image-photo/young-woman-using-wireless-earphones-600w-1841881210.jpg")))),
+                          image: new NetworkImage("https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60")))),
               Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

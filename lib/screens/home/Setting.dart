@@ -13,7 +13,7 @@ class SettingState extends State<Setting> {
     return Scaffold(
         body: Container(
              child : Column(
-
+              /// https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
                  children: [
                    Container(
                      child: Container(
