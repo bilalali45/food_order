@@ -130,7 +130,7 @@ data(BuildContext context) {
                                   bottom: 0.0,
                                   child: Align(
                                     alignment: Alignment.topRight,
-                                    child: new Icon(Icons.star),
+                                    child: new Icon(Icons.star,color: Colors.grey),
                                   )
                               ),
 
