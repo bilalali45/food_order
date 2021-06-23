@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order/screens/home/HomeScreen.dart';
+import 'package:food_order/screens/registration/SignUpPage.dart';
 import 'package:food_order/screens/registration/bezierContainer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:food_order/screens/home/MyHomePage.dart';
@@ -95,10 +96,10 @@ class LoginPageState extends State<LoginPage> {
   Widget _createAccountLabel() {
     return InkWell(
       onTap: () {
-        // Navigator.push(
-        //     context, MaterialPageRoute(builder: (context) => SignUpPage())
-        //
-        // );
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => SignUpPage())
+
+        );
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20),
@@ -174,8 +175,8 @@ class LoginPageState extends State<LoginPage> {
             height: 10,
           ),
           TextField(
-              obscureText: isPassword,
-              decoration: InputDecoration(
+                   obscureText: isPassword,
+                  decoration: InputDecoration(
                   border: InputBorder.none,
                   fillColor: Color(0xfff3f3f4),
                   filled: true))

@@ -43,15 +43,15 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: IconButton(icon: Icon(Icons.menu), onPressed: (){
           _scaffoldState.currentState.openDrawer();
         }),
+        // title: Text('Page title', style: TextStyle(
+          //  fontWeight: FontWeight.bold),textAlign:TextAlign.center,),
+        title: new Center(child: new Text("The Venue", textAlign: TextAlign.center)),
 
-        title: Text('Page title'),
         actions: [
-          Icon(Icons.favorite),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Icon(Icons.search),
           ),
-          Icon(Icons.more_vert),
         ],
         backgroundColor: Colors.lightBlue,
       ),

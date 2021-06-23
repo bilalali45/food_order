@@ -38,9 +38,9 @@ class HistroyState extends State<Histroy> {
                                  border: Border.all(
                                      color: Colors.white, // Set border color
                                      width: 3.0),   // Set border width
-                                 borderRadius: BorderRadius.all(
+                                     borderRadius: BorderRadius.all(
                                      Radius.circular(10.0)), // Set rounded corner radius
-                                 boxShadow: [BoxShadow(blurRadius: 10,color: Colors.black,offset: Offset(1,3))] // Make rounded corner of border
+                                    boxShadow: [BoxShadow(blurRadius: 10,color: Colors.black,offset: Offset(1,3))] // Make rounded corner of border
                              ),
                              child: Text('Entry ${entries[index]}'),
                            )
